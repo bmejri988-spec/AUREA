@@ -1,0 +1,368 @@
+import { ArrowDown, ArrowUpRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+import Navbar from '../../components/navbar/Navbar'
+import Footer from '../../components/footer/Footer'
+import Container from '../../components/common/Container'
+import SectionTitle from '../../components/common/SectionTitle'
+import Reveal from '../../components/common/Reveal'
+
+function About() {
+  return (
+    <main className="bg-[#F7F5F0]">
+      <Navbar />
+
+      {/* =========================================================
+          HERO
+      ========================================================= */}
+      <section className="relative flex min-h-[78vh] items-end overflow-hidden bg-[#1D2923]">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85"
+            alt="Contemporary architectural home surrounded by nature"
+            className="h-full w-full object-cover"
+          />
+
+          {/* Dark architectural overlay */}
+          <div className="absolute inset-0 bg-[#1D2923]/70" />
+          <div className="absolute inset-0 bg-linear-to-t from-[#1D2923] via-[#1D2923]/45 to-transparent" />
+
+          {/* Existing decorative grid */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_35%,rgba(180,154,112,0.18),transparent_35%)]" />
+          <div className="absolute bottom-0 left-1/2 h-[70%] w-px -translate-x-1/2 bg-white/10" />
+          <div className="absolute left-[20%] top-0 h-full w-px bg-white/5" />
+          <div className="absolute right-[20%] top-0 h-full w-px bg-white/5" />
+        </div>
+
+        <Container className="relative z-10 pb-16 pt-40 md:pb-24 lg:pb-28">
+          <Reveal>
+            <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.3em] text-[#B49A70]">
+              About AUREA
+            </span>
+          </Reveal>
+
+          <Reveal delay={0.1}>
+            <h1 className="max-w-5xl font-serif text-6xl font-medium leading-[0.88] tracking-[-0.02em] text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
+              Architecture
+              <span className="block text-[#B49A70]">with intention.</span>
+            </h1>
+          </Reveal>
+
+          <div className="mt-10 flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <Reveal delay={0.2}>
+              <p className="max-w-xl text-base leading-7 text-white/65 md:text-lg">
+                AUREA creates contemporary chalets designed around the land,
+                the people who inhabit them, and the way they want to live.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <a
+                href="#story"
+                className="flex w-fit items-center gap-3 text-sm font-medium text-white transition-colors hover:text-[#B49A70]"
+              >
+                Discover our approach
+                <ArrowDown size={17} strokeWidth={1.5} />
+              </a>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          INTRODUCTION / PHILOSOPHY
+      ========================================================= */}
+      <section id="story" className="py-24 md:py-32 lg:py-40">
+        <Container>
+          <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
+            {/* Image */}
+            <Reveal className="order-2 lg:order-1">
+              <div className="group relative h-105 overflow-hidden md:h-140 lg:h-162">
+                <img
+                  src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1400&q=85"
+                  alt="Wooden chalet surrounded by forest"
+                  className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                />
+
+                <div className="absolute inset-0 bg-linear-to-t from-[#1D2923]/25 to-transparent" />
+
+                <div className="absolute bottom-6 left-6">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/80">
+                    Designed for its setting
+                  </span>
+                </div>
+              </div>
+            </Reveal>
+
+            {/* Text */}
+            <div className="order-1 flex flex-col justify-center lg:order-2">
+              <Reveal>
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
+                  Our philosophy
+                </span>
+              </Reveal>
+
+              <Reveal delay={0.1}>
+                <h2 className="mt-5 font-serif text-4xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl lg:text-7xl">
+                  A chalet should feel like it belongs exactly where it is.
+                </h2>
+              </Reveal>
+
+              <Reveal delay={0.2}>
+                <div className="mt-10 max-w-2xl space-y-6 text-base leading-8 text-[#77766F]">
+                  <p>
+                    We believe a home begins with its relationship to its
+                    surroundings. The terrain, the landscape, the light and
+                    the way people move through a space all influence the
+                    architecture.
+                  </p>
+
+                  <p>
+                    AUREA brings these elements together through a considered
+                    approach to chalet design. Instead of treating a chalet as
+                    a fixed product, we create a framework that can adapt to
+                    different terrains, lifestyles and ambitions.
+                  </p>
+
+                  <p>
+                    The result is architecture that is refined without being
+                    excessive, contemporary without losing its sense of place.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          APPROACH
+      ========================================================= */}
+      <section className="bg-[#EFEBE2] py-24 md:py-32 lg:py-40">
+        <Container>
+          <Reveal>
+            <SectionTitle
+              eyebrow="The AUREA approach"
+              title="Three elements. One coherent vision."
+              description="Every project begins by bringing together the land, the architecture and the details that make a space personal."
+            />
+          </Reveal>
+
+          {/* Image strip */}
+          <Reveal delay={0.1}>
+            <div className="mt-16 h-75 overflow-hidden md:h-105 lg:h-125">
+              <img
+                src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&w=2200&q=85"
+                alt="Modern chalet architecture in a mountain landscape"
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </Reveal>
+
+          {/* Three principles */}
+          <div className="mt-16 grid border-t border-[#DDD8CD] md:grid-cols-3">
+            <Reveal delay={0.1} className="h-full">
+              <article className="border-b border-[#DDD8CD] py-10 md:border-b-0 md:border-r md:pr-10">
+                <span className="text-sm text-[#B49A70]">01</span>
+
+                <h3 className="mt-8 font-serif text-4xl text-[#1D2923]">
+                  The land
+                </h3>
+
+                <p className="mt-5 text-sm leading-7 text-[#77766F]">
+                  Understanding the terrain comes first. Orientation,
+                  landscape and context guide the relationship between the
+                  chalet and its surroundings.
+                </p>
+              </article>
+            </Reveal>
+
+            <Reveal delay={0.2} className="h-full">
+              <article className="border-b border-[#DDD8CD] py-10 md:border-b-0 md:border-r md:px-10">
+                <span className="text-sm text-[#B49A70]">02</span>
+
+                <h3 className="mt-8 font-serif text-4xl text-[#1D2923]">
+                  The architecture
+                </h3>
+
+                <p className="mt-5 text-sm leading-7 text-[#77766F]">
+                  Our chalet models provide a strong architectural foundation
+                  while leaving room for the project to respond to its specific
+                  context.
+                </p>
+              </article>
+            </Reveal>
+
+            <Reveal delay={0.3} className="h-full">
+              <article className="py-10 md:pl-10">
+                <span className="text-sm text-[#B49A70]">03</span>
+
+                <h3 className="mt-8 font-serif text-4xl text-[#1D2923]">
+                  The details
+                </h3>
+
+                <p className="mt-5 text-sm leading-7 text-[#77766F]">
+                  Materials, options and finishing choices complete the
+                  experience, allowing each project to reflect the people who
+                  will live in it.
+                </p>
+              </article>
+            </Reveal>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          STATEMENT
+      ========================================================= */}
+      <section className="bg-[#1D2923] py-28 md:py-40">
+        <Container>
+          <Reveal>
+            <div className="max-w-6xl">
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
+                Our perspective
+              </span>
+
+              <blockquote className="mt-8 font-serif text-5xl font-medium leading-[0.95] text-white md:text-7xl lg:text-8xl">
+                “Good architecture does not compete with its surroundings.
+                <span className="text-[#B49A70]">
+                  {' '}
+                  It gives them meaning.
+                </span>
+                ”
+              </blockquote>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          PROCESS
+      ========================================================= */}
+      <section className="py-24 md:py-32 lg:py-40">
+        <Container>
+          <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
+            <Reveal>
+              <SectionTitle
+                eyebrow="From idea to home"
+                title="A simpler way to build."
+                description="AUREA brings the major decisions into one guided experience."
+              />
+            </Reveal>
+
+            <div className="border-t border-[#DDD8CD]">
+              {[
+                {
+                  number: '01',
+                  title: 'Choose your terrain',
+                  text: 'Start with the place where your chalet will live.',
+                },
+                {
+                  number: '02',
+                  title: 'Discover your model',
+                  text: 'Select an architectural foundation that fits your vision.',
+                },
+                {
+                  number: '03',
+                  title: 'Personalize your chalet',
+                  text: 'Add the options and details that make the project yours.',
+                },
+                {
+                  number: '04',
+                  title: 'Bring it together',
+                  text: 'Review your configuration and move from concept toward realization.',
+                },
+              ].map((step, index) => (
+                <Reveal key={step.number} delay={index * 0.08}>
+                  <div className="grid gap-4 border-b border-[#DDD8CD] py-7 md:grid-cols-[80px_1fr_1.2fr] md:items-center">
+                    <span className="text-sm text-[#B49A70]">
+                      {step.number}
+                    </span>
+
+                    <h3 className="font-serif text-3xl text-[#1D2923]">
+                      {step.title}
+                    </h3>
+
+                    <p className="max-w-md text-sm leading-6 text-[#77766F]">
+                      {step.text}
+                    </p>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          INTERIOR / LIFESTYLE IMAGE
+      ========================================================= */}
+      <section className="pb-24 md:pb-32 lg:pb-40">
+        <Container>
+          <Reveal>
+            <div className="relative h-105 overflow-hidden md:h-150 lg:h-180">
+              <img
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85"
+                alt="Warm contemporary chalet interior"
+                className="h-full w-full object-cover"
+              />
+
+              <div className="absolute inset-0 bg-linear-to-t from-[#1D2923]/60 via-transparent to-transparent" />
+
+              <div className="absolute bottom-8 left-6 max-w-xl md:bottom-12 md:left-12">
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
+                  The details matter
+                </span>
+
+                <p className="mt-4 font-serif text-3xl leading-tight text-white md:text-5xl">
+                  Spaces shaped around the way you want to live.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      {/* =========================================================
+          CTA
+      ========================================================= */}
+      <section className="pb-24 md:pb-32">
+        <Container>
+          <Reveal>
+            <div className="relative overflow-hidden bg-[#EFEBE2] px-6 py-16 md:px-12 md:py-20 lg:px-20 lg:py-24">
+              <div className="absolute right-0 top-0 h-64 w-64 rounded-full bg-[#B49A70]/10 blur-3xl" />
+
+              <div className="relative z-10 max-w-3xl">
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
+                  Your project
+                </span>
+
+                <h2 className="mt-5 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-7xl">
+                  Start designing a chalet that feels like yours.
+                </h2>
+
+                <p className="mt-7 max-w-xl text-base leading-7 text-[#77766F]">
+                  Explore the available terrains, discover our chalet models
+                  and create a configuration around your vision.
+                </p>
+
+                <Link
+                  to="/build-your-own"
+                  className="mt-9 inline-flex items-center gap-3 bg-[#1D2923] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#2D3C34]"
+                >
+                  Build Your Own
+                  <ArrowUpRight size={17} strokeWidth={1.7} />
+                </Link>
+              </div>
+            </div>
+          </Reveal>
+        </Container>
+      </section>
+
+      <Footer />
+    </main>
+  )
+}
+
+export default About
