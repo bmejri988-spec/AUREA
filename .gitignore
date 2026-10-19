@@ -13,3 +13,5 @@ dist/
 # Tooling
 .vscode/
 .DS_Store
+
+*.mp4
