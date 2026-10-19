@@ -15,7 +15,7 @@ function About() {
       {/* =========================================================
           HERO
       ========================================================= */}
-      <section className="relative flex min-h-[78vh] items-end overflow-hidden bg-[#1D2923]">
+      <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
         {/* Background image */}
         <div className="absolute inset-0">
           <img

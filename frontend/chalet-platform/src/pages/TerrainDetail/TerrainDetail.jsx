@@ -46,7 +46,7 @@ function TerrainDetail() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative h-[85vh] min-h-162.5 overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
 
         <motion.img
           initial={{ scale: 1.08 }}

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
@@ -13,10 +13,23 @@ const navLinks = [
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isHidden, setIsHidden] = useState(false)
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 60)
+      const currentScrollY = window.scrollY
+      const scrollDelta = currentScrollY - lastScrollY.current
+
+      setScrolled(currentScrollY > 60)
+
+      if (currentScrollY <= 0) {
+        setIsHidden(false)
+      } else if (Math.abs(scrollDelta) > 4) {
+        setIsHidden(scrollDelta > 0 && !isOpen)
+      }
+
+      lastScrollY.current = currentScrollY
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -24,11 +37,13 @@ function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [])
+  }, [isOpen])
 
   return (
     <header
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
+        isHidden ? '-translate-y-full' : 'translate-y-0'
+      } ${
         scrolled
           ? 'bg-[#1D2923]/95 shadow-lg backdrop-blur-md'
           : 'bg-transparent'

@@ -18,7 +18,7 @@ function ChaletModels() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative flex min-h-[70vh] items-end overflow-hidden bg-[#1D2923]">
+      <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
           src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=2200&q=90"

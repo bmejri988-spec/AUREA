@@ -4,12 +4,12 @@ function Footer() {
   return (
     <footer className="bg-[#151D19] text-white">
 
-      <div className="mx-auto max-w-175 px-6 py-16 md:px-10 md:py-20 lg:px-16">
+      <div className="mx-auto max-w-375 px-6 py-16 md:px-10 md:py-20 lg:px-16">
 
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr] lg:gap-16">
 
           {/* Brand */}
-          <div className="lg:col-span-2">
+          <div>
             <Link
               to="/"
               className="font-serif text-4xl"
