@@ -37,4 +37,39 @@ uv run python manage.py collectstatic --noinput
 uv run python manage.py seed_catalog
 ```
 
+## Catalog image migration
+
+The image migration uses the explicit mapping in
+`catalog/image_migration_manifest.json`. It uploads the `modeles` and
+`terrains` folders to the private Supabase Storage bucket `images`, then
+stores `storage://images/...` references in the existing `image` and
+`gallery`
+columns. The API converts those references into short-lived signed URLs.
+
+Set these variables in `backend/.env` (never commit the service-role key):
+
+```env
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+SUPABASE_STORAGE_BUCKET=images
+```
+
+Create the private `images` bucket in Supabase Storage before the first real
+run. From the repository root, preview the exact files and database updates:
+
+```powershell
+cd backend
+.\.venv\Scripts\python.exe manage.py migrate_catalog_images --dry-run --source-root ..
+```
+
+After reviewing the dry-run output, run the idempotent migration:
+
+```powershell
+.\.venv\Scripts\python.exe manage.py migrate_catalog_images --source-root ..
+```
+
+The command never deletes source files or records. Existing Storage objects
+are skipped, missing/invalid files are reported, and the database is updated
+only after its corresponding uploads succeed.
+
 Configure the variables from `.env.example` in the Render dashboard. Never commit the real `.env` file.
