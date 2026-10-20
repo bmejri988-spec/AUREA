@@ -19,7 +19,7 @@ function About() {
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://source.unsplash.com/2400x1400/?tunisia,architecture,mediterranean"
+            src="/images/hero-about.jpg"
             alt="Architecture méditerranéenne en Tunisie"
             className="h-full w-full object-cover"
           />
@@ -80,7 +80,7 @@ function About() {
             <Reveal className="order-2 lg:order-1">
               <div className="group relative h-105 overflow-hidden md:h-140 lg:h-162">
                 <img
-                  src="https://source.unsplash.com/1400x1000/?tunisia,forest,mountain"
+                  src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1400&q=90"
                   alt="Paysage forestier du nord-ouest tunisien"
                   className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                 />
@@ -151,7 +151,7 @@ function About() {
           <Reveal delay={0.1}>
             <div className="mt-16 h-75 overflow-hidden md:h-105 lg:h-125">
               <img
-                src="https://source.unsplash.com/2200x1200/?tunisia,coast,landscape"
+                src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=2200&q=90"
                 alt="Paysage côtier tunisien"
                 className="h-full w-full object-cover"
               />
@@ -301,7 +301,7 @@ function About() {
           <Reveal>
             <div className="relative h-105 overflow-hidden md:h-150 lg:h-180">
               <img
-                src="https://source.unsplash.com/2200x1200/?tunisia,interior,architecture"
+                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=90"
                 alt="Warm contemporary chalet interior"
                 className="h-full w-full object-cover"
               />

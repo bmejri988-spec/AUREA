@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aurea – Votre chalet en Tunisie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--nuit:#0c2b30;--nuit2:#12393f;--or:#c9a45c;--chaux:#f7f5f0;--sable:#e4dccb;--texte:#1a2a2d;--mer:#2f8f9d;
+--serif:'Fraunces',Georgia,serif;--sans:'Figtree',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html,body{height:100%;margin:0}
+body{font-family:var(--sans);background:var(--nuit);color:var(--chaux);overflow:hidden}
+.app{display:grid;grid-template-columns:2fr 1fr;height:100%}
+/* ---- Partie gauche 2/3 ---- */
+.story{overflow-y:auto;scroll-snap-type:y mandatory;scroll-behavior:smooth;background:
+radial-gradient(1200px 500px at 85% -10%,rgba(201,164,92,.22),transparent 60%),var(--nuit)}
+.story section{min-height:100%;scroll-snap-align:start;padding:clamp(28px,5vw,72px);display:flex;flex-direction:column;justify-content:center;position:relative}
+nav.top{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(28px,5vw,72px);background:linear-gradient(var(--nuit),rgba(12,43,48,0));pointer-events:none}
+nav.top *{pointer-events:auto}
+.logo{font-family:var(--serif);font-size:26px;letter-spacing:.14em;color:var(--or)}
+nav.top ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:14px}
+nav.top a{color:var(--sable);text-decoration:none;opacity:.8}nav.top a:hover{opacity:1;color:var(--or)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.4vw,84px);line-height:1.02;margin:0 0 24px;max-width:14ch;letter-spacing:-.01em}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,52px);line-height:1.1;margin:0 0 18px;max-width:20ch}
+p.lead{font-size:clamp(16px,1.35vw,20px);line-height:1.6;color:var(--sable);max-width:56ch;margin:0 0 28px}
+.mots{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+.mots span{border:1px solid rgba(201,164,92,.6);color:var(--or);padding:8px 18px;border-radius:99px;font-size:15px}
+.cta{display:inline-block;background:var(--or);color:var(--nuit);padding:14px 26px;border-radius:99px;font-weight:600;text-decoration:none;font-size:15px;border:0;cursor:pointer}
+.horizon{position:absolute;right:0;bottom:0;width:62%;max-width:560px;opacity:.9;pointer-events:none}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:10px}
+.cols div{border-top:2px solid var(--or);padding-top:16px}
+.cols h3{font-family:var(--serif);font-weight:600;font-size:22px;margin:0 0 8px}
+.cols p{margin:0;color:var(--sable);line-height:1.55;font-size:15px}
+.chiffres{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
+.chiffres b{font-family:var(--serif);font-size:clamp(30px,3.4vw,52px);font-weight:400;color:var(--or);display:block}
+.chiffres small{color:var(--sable);font-size:14px}
+.video{aspect-ratio:16/9;max-width:760px;border-radius:18px;overflow:hidden;background:linear-gradient(135deg,var(--nuit2),#1b5560);display:grid;place-items:center;border:1px solid rgba(201,164,92,.4)}
+.video iframe,.video video{width:100%;height:100%;border:0}
+.video .play{text-align:center;color:var(--sable)}
+.video .play i{display:grid;place-items:center;width:76px;height:76px;border-radius:50%;background:var(--or);color:var(--nuit);margin:0 auto 12px;font-style:normal;font-size:28px}
+/* ---- Partie droite 1/3 ---- */
+.config{background:var(--chaux);color:var(--texte);display:flex;flex-direction:column;min-height:0;box-shadow:-18px 0 40px rgba(0,0,0,.25)}
+.config header{padding:22px 24px 0}
+.config header h2{font-size:26px;color:var(--nuit);margin:0 0 4px}
+.config header p{margin:0 0 14px;font-size:13px;color:#5a6a6c}
+.tabs{display:flex;border-bottom:1px solid var(--sable);padding:0 24px;gap:4px}
+.tabs button{flex:1;background:none;border:0;padding:12px 4px;font:500 14px var(--sans);color:#6b7b7d;cursor:pointer;border-bottom:3px solid transparent}
+.tabs button[aria-selected=true]{color:var(--nuit);border-color:var(--or)}
+.panel{flex:1;overflow-y:auto;padding:18px 24px;display:grid;gap:12px;align-content:start}
+.item{display:grid;grid-template-columns:76px 1fr;gap:14px;text-align:left;background:#fff;border:2px solid transparent;border-radius:14px;padding:10px;cursor:pointer;font:inherit;color:inherit;box-shadow:0 1px 8px rgba(12,43,48,.08)}
+.item[aria-pressed=true]{border-color:var(--or);background:#fffaf0}
+.item:focus-visible,.tabs button:focus-visible,.cta:focus-visible{outline:3px solid var(--mer);outline-offset:2px}
+.thumb{width:76px;height:76px;border-radius:10px;display:grid;place-items:center;font-size:30px}
+.item b{display:block;font-family:var(--serif);font-size:17px;color:var(--nuit)}
+.item span{display:block;font-size:13px;color:#5a6a6c;margin:2px 0}
+.item em{font-style:normal;font-size:13px;font-weight:600;color:#8a6a22}
+.recap{padding:16px 24px;background:var(--nuit);color:var(--chaux)}
+.recap ul{list-style:none;margin:0 0 10px;padding:0;font-size:13px;color:var(--sable);display:grid;gap:3px}
+.recap li{display:flex;justify-content:space-between}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:12px;font-family:var(--serif);font-size:22px}
+.total b{color:var(--or);font-weight:600}
+.recap .cta{width:100%;text-align:center}
+@media (max-width:900px){
+body{overflow:auto}.app{display:block;height:auto}
+.story{overflow:visible;scroll-snap-type:none}.story section{min-height:auto;padding-top:56px;padding-bottom:56px}
+.cols,.chiffres{grid-template-columns:1fr 1fr}nav.top ul{display:none}.horizon{display:none}
+.config{min-height:100vh}.panel{overflow:visible}}
+@media (prefers-reduced-motion:reduce){.story{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="app">
+<main class="story" id="story">
+<nav class="top"><div class="logo">AUREA</div>
+<ul><li><a href="#accueil">Accueil</a></li><li><a href="#solution">La solution</a></li><li><a href="#atouts">Nos atouts</a></li><li><a href="#video">Vidéo</a></li></ul></nav>
+
+<section id="accueil" style="margin-top:-64px">
+<h1>Votre second chez-vous, au cœur de la Tunisie.</h1>
+<p class="lead">Aurea offre à un cercle restreint de personnes la possibilité de posséder son propre chalet, sur un terrain d’exception, conçu selon ses goûts.</p>
+<div class="mots"><span>Confiance</span><span>Exclusivité</span><span>Sur mesure</span><span>Sérénité</span></div>
+<div><a class="cta" href="#solution">Découvrir le concept</a></div>
+<svg class="horizon" viewBox="0 0 560 260" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a45c" stop-opacity=".55"/><stop offset="1" stop-color="#c9a45c" stop-opacity="0"/></linearGradient></defs>
+<circle cx="400" cy="110" r="64" fill="url(#g)"/><path d="M0 200 Q120 150 230 190 T560 170 V260 H0Z" fill="#12393f"/><path d="M0 230 Q160 190 300 225 T560 215 V260 H0Z" fill="#0a2226"/>
+<path d="M300 150 l60 -42 l60 42 v50 h-120z" fill="none" stroke="#c9a45c" stroke-width="2.5"/><rect x="345" y="165" width="30" height="35" fill="none" stroke="#c9a45c" stroke-width="2"/></svg>
+</section>
+
+<section id="solution">
+<h2>Une solution simple : vous choisissez, nous réalisons.</h2>
+<p class="lead">Trois décisions suffisent. Aurea s’occupe du reste : acquisition, permis, construction, finitions et entretien.</p>
+<div class="cols">
+<div><h3>Le terrain</h3><p>Littoral, montagne, désert ou oasis : des parcelles sélectionnées et juridiquement sécurisées.</p></div>
+<div><h3>Le modèle</h3><p>Une gamme de chalets pensés pour le climat tunisien et leur environnement.</p></div>
+<div><h3>Les options</h3><p>Piscine, spa, domotique, panneaux solaires : composez votre maison.</p></div>
+</div>
+</section>
+
+<section id="but">
+<h2>Notre but : rendre l’exception accessible, avec confiance.</h2>
+<p class="lead">Permettre à une clientèle choisie de devenir propriétaire d’un lieu de vie unique, avec un accompagnement transparent du premier choix jusqu’à la remise des clés.</p>
+<div class="chiffres">
+<div><b>100 %</b><small>terrains titrés et vérifiés</small></div>
+<div><b>24 mois</b><small>de la signature à la remise des clés</small></div>
+<div><b>10 ans</b><small>de garantie sur la structure</small></div>
+<div><b>1</b><small>interlocuteur dédié par client</small></div>
+</div>
+</section>
+
+<section id="atouts">
+<h2>Ce qui fait la différence.</h2>
+<div class="cols" style="grid-template-columns:repeat(2,1fr);gap:30px 40px">
+<div><h3>Sécurité juridique</h3><p>Chaque terrain est contrôlé par nos juristes avant d’être proposé.</p></div>
+<div><h3>Construction durable</h3><p>Bois certifié, isolation naturelle, énergie solaire en option.</p></div>
+<div><h3>Personnalisation totale</h3><p>Terrain, modèle, finitions et équipements : tout se choisit.</p></div>
+<div><h3>Service clé en main</h3><p>Gestion locative et entretien disponibles quand vous êtes absent.</p></div>
+</div>
+</section>
+
+<section id="video">
+<h2>Découvrez Aurea en images.</h2>
+<div class="video" id="videoBox"><div class="play"><i>▶</i>Votre vidéo de présentation s’affichera ici</div></div>
+</section>
+</main>
+
+<aside class="config" aria-label="Composez votre chalet">
+<header><h2>Composez votre chalet</h2><p>Choisissez, le total se met à jour.</p></header>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="panel" id="panel"></div>
+<div class="recap"><ul id="liste"></ul><div class="total"><span>Estimation</span><b id="total">—</b></div><button class="cta" id="demande">Demander un entretien privé</button></div>
+</aside>
+</div>
+
+<script>
+// Pour afficher votre vidéo : collez ici le lien d’intégration (YouTube, Vimeo) ou un fichier .mp4
+var VIDEO_URL = "";
+
+var DATA = {
+ terrains:[
+  {n:"Plage de Hammamet",d:"Face à la mer · 1 200 m²",p:380000,ic:"🌊",c:"#2f8f9d,#7cc4cc"},
+  {n:"Forêt d’Aïn Draham",d:"Chênes-lièges · 2 500 m²",p:260000,ic:"🌲",c:"#2d5a3d,#7fae85"},
+  {n:"Oasis de Tozeur",d:"Palmeraie · 1 800 m²",p:220000,ic:"🌴",c:"#b8893c,#e6c883"},
+  {n:"Îles de Djerba",d:"Bord de lagune · 1 500 m²",p:340000,ic:"⛵",c:"#3a7ca5,#a9d3e8"}],
+ modeles:[
+  {n:"Aurea Essentiel",d:"2 chambres · 90 m²",p:310000,ic:"🏡",c:"#8a6a3a,#d3b583"},
+  {n:"Aurea Confort",d:"3 chambres · 140 m²",p:480000,ic:"🏠",c:"#6b4b2a,#c49a63"},
+  {n:"Aurea Prestige",d:"4 chambres · 220 m² · étage",p:720000,ic:"🏛️",c:"#4a3b2a,#b59a74"}],
+ options:[
+  {n:"Piscine",d:"8 × 4 m, traitement au sel",p:95000,ic:"🏊",c:"#2f8f9d,#8fd3dc"},
+  {n:"Spa & sauna",d:"Terrasse privée",p:60000,ic:"♨️",c:"#7a5a8a,#c8aad6"},
+  {n:"Énergie solaire",d:"Autonomie électrique",p:48000,ic:"☀️",c:"#c9a45c,#f1dc9d"},
+  {n:"Domotique",d:"Pilotage à distance",p:30000,ic:"📱",c:"#3c4f5e,#9fb4c4"},
+  {n:"Jardin paysager",d:"Irrigation intelligente",p:42000,ic:"🌿",c:"#4c8a4c,#a8d4a0"}]
+};
+var LABELS={terrains:"Terrains",modeles:"Modèles",options:"Options"};
+var sel={terrains:null,modeles:null,options:[]};
+var tab="terrains";
+var fmt=function(v){return v.toLocaleString("fr-FR")+" DT"};
+
+function renderTabs(){
+ var t=document.getElementById("tabs");t.innerHTML="";
+ Object.keys(LABELS).forEach(function(k){
+  var b=document.createElement("button");b.setAttribute("role","tab");b.setAttribute("aria-selected",k===tab);
+  b.textContent=LABELS[k];b.onclick=function(){tab=k;renderTabs();renderPanel()};t.appendChild(b)});
+}
+function isOn(k,i){return k==="options"?sel.options.indexOf(i)>-1:sel[k]===i}
+function renderPanel(){
+ var p=document.getElementById("panel");p.innerHTML="";
+ DATA[tab].forEach(function(it,i){
+  var b=document.createElement("button");b.className="item";b.setAttribute("aria-pressed",isOn(tab,i));
+  var c=it.c.split(",");
+  b.innerHTML='<div class="thumb" style="background:linear-gradient(135deg,'+c[0]+','+c[1]+')">'+it.ic+'</div><div><b>'+it.n+'</b><span>'+it.d+'</span><em>'+(tab==="options"?"+ ":"")+fmt(it.p)+'</em></div>';
+  b.onclick=function(){
+   if(tab==="options"){var x=sel.options.indexOf(i);x>-1?sel.options.splice(x,1):sel.options.push(i)}
+   else sel[tab]=(sel[tab]===i?null:i);
+   renderPanel();renderRecap()};
+  p.appendChild(b)});
+}
+function renderRecap(){
+ var l=document.getElementById("liste");l.innerHTML="";var tot=0;
+ function add(it){tot+=it.p;var li=document.createElement("li");li.innerHTML="<span>"+it.n+"</span><span>"+fmt(it.p)+"</span>";l.appendChild(li)}
+ if(sel.terrains!==null)add(DATA.terrains[sel.terrains]);
+ if(sel.modeles!==null)add(DATA.modeles[sel.modeles]);
+ sel.options.forEach(function(i){add(DATA.options[i])});
+ if(!l.children.length){l.innerHTML="<li><span>Aucune sélection pour l’instant</span></li>"}
+ document.getElementById("total").textContent=tot?fmt(tot):"—";
+}
+document.getElementById("demande").onclick=function(){
+ var n=(sel.terrains!==null?1:0)+(sel.modeles!==null?1:0)+sel.options.length;
+ this.textContent=n?"Demande enregistrée. Nous vous contactons.":"Choisissez d’abord un terrain ou un modèle";
+ var s=this;setTimeout(function(){s.textContent="Demander un entretien privé"},3000)};
+
+if(VIDEO_URL){
+ var box=document.getElementById("videoBox");
+ box.innerHTML=/\.mp4($|\?)/.test(VIDEO_URL)?'<video controls src="'+VIDEO_URL+'"></video>':'<iframe src="'+VIDEO_URL+'" allowfullscreen title="Vidéo Aurea"></iframe>';
+}
+renderTabs();renderPanel();renderRecap();
+</script>
+</body>
+</html>

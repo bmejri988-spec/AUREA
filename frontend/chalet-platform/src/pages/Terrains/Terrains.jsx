@@ -37,7 +37,7 @@ function Terrains() {
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="https://source.unsplash.com/2200x1400/?tunisia,mountain,landscape"
+          src="/images/hero-terrains.jpg"
           alt="Montagnes tunisiennes"
           className="absolute inset-0 h-full w-full object-cover"
         />

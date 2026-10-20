@@ -22,7 +22,7 @@ function Options() {
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="https://source.unsplash.com/2200x1400/?tunisia,interior,mediterranean"
+          src="/images/hero-options.jpg"
           alt="Intérieur contemporain aux inspirations tunisiennes"
           className="absolute inset-0 h-full w-full object-cover"
         />
