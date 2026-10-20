@@ -20,7 +20,7 @@ function TerrainDetail() {
   if (!terrain) {
     return (
       <main className="min-h-screen bg-[#F7F5F0]">
-        <Navbar />
+        <Navbar contained />
 
         <div className="flex min-h-screen items-center justify-center px-6">
           <div className="text-center">
@@ -33,7 +33,7 @@ function TerrainDetail() {
               className="mt-8 inline-flex items-center gap-2 bg-[#1D2923] px-6 py-4 text-sm font-semibold text-white"
             >
               <ArrowLeft size={16} />
-              Back to terrains
+              Retour aux terrains
             </Link>
           </div>
         </div>
@@ -43,7 +43,7 @@ function TerrainDetail() {
 
   return (
     <main className="bg-[#F7F5F0]">
-      <Navbar />
+      <Navbar contained />
 
       {/* HERO */}
       <section className="relative min-h-screen overflow-hidden">
@@ -121,7 +121,7 @@ function TerrainDetail() {
             <Reveal>
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  The location
+                  L’emplacement
                 </span>
 
                 <h2 className="mt-4 max-w-md font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
@@ -176,7 +176,7 @@ function TerrainDetail() {
                   </span>
 
                   <p className="mt-3 font-serif text-2xl text-[#1D2923]">
-                    {formatPrice(terrain.basePrice, 'From ')}
+                    {formatPrice(terrain.basePrice, 'À partir de ')}
                   </p>
                 </div>
 
@@ -201,7 +201,7 @@ function TerrainDetail() {
                 </span>
 
                 <h2 className="mt-4 font-serif text-5xl leading-[0.95] md:text-6xl">
-                  Designed around
+                  Pensé autour de
                   <br />
                   the landscape.
                 </h2>
@@ -270,7 +270,7 @@ function TerrainDetail() {
             <Reveal>
 
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1D2923]/60">
-                Your next step
+                Votre prochaine étape
               </span>
 
               <h2 className="mt-5 font-serif text-6xl font-medium leading-[0.88] text-[#1D2923] md:text-8xl">
@@ -280,7 +280,7 @@ function TerrainDetail() {
               </h2>
 
               <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-[#1D2923]/65 md:text-base">
-                Choose your architecture, select your options,
+                Choisissez votre architecture, sélectionnez vos options,
                 and start creating the second home you've imagined.
               </p>
 

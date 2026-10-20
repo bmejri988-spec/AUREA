@@ -19,11 +19,11 @@ function ConfiguratorSummary() {
 
         <div>
           <span className="text-[10px] uppercase tracking-[0.2em] text-white/45">
-            Your configuration
+            Votre configuration
           </span>
 
           <h2 className="mt-2 font-serif text-3xl">
-            Your chalet
+            Votre chalet
           </h2>
         </div>
 

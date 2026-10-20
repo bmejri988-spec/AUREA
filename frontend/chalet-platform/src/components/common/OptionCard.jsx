@@ -1,6 +1,7 @@
 import { ArrowUpRight, Check } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { formatPrice } from '../../data/repository'
+import { localizedDescription, localizedName } from '../../data/localization'
 
 function OptionCard({
   option,
@@ -42,7 +43,7 @@ function OptionCard({
         {/* Popular */}
         {option.popular && (
           <span className="absolute left-4 top-4 bg-[#B49A70] px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-[#1D2923]">
-            Popular
+            Populaire
           </span>
         )}
 
@@ -111,17 +112,17 @@ function OptionCard({
         <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
 
           <h3 className="font-serif text-3xl leading-none">
-            {option.name}
+            {localizedName(option)}
           </h3>
 
           <p className="mt-2 max-w-sm text-xs leading-5 text-white/65">
-            {option.shortDescription}
+            {localizedDescription(option)}
           </p>
 
           <div className="mt-4 flex items-center justify-between border-t border-white/20 pt-3">
 
             <span className="text-[10px] uppercase tracking-[0.15em] text-white/55">
-              {selected ? 'Added to chalet' : 'Add to chalet'}
+              {selected               ? 'Ajoutée au chalet' : 'Ajouter au chalet'}
             </span>
 
             <span className="text-xs font-medium">

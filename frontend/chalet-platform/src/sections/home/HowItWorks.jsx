@@ -4,27 +4,27 @@ import Container from '../../components/common/Container'
 const steps = [
   {
     number: '01',
-    title: 'Choose your place',
+    title: 'Choisissez votre lieu',
     description:
-      'Explore exceptional terrains and find the environment that feels right for you.',
+      'Explorez des terrains d’exception et trouvez l’environnement qui vous correspond.',
   },
   {
     number: '02',
-    title: 'Choose your chalet',
+    title: 'Choisissez votre chalet',
     description:
-      'Select the architecture, size, and layout that match the way you want to live.',
+      'Sélectionnez l’architecture, la surface et l’agencement qui correspondent à votre façon de vivre.',
   },
   {
     number: '03',
-    title: 'Make it yours',
+    title: 'Personnalisez votre projet',
     description:
-      'Add pools, terraces, fireplaces, and other details to create your perfect retreat.',
+      'Ajoutez piscine, terrasse, cheminée et autres détails pour créer votre refuge idéal.',
   },
   {
     number: '04',
-    title: 'Visualize it',
+    title: 'Projetez-vous',
     description:
-      'See what your future chalet could look like before bringing your vision to life.',
+      'Visualisez votre futur chalet avant de donner vie à votre projet.',
   },
 ]
 
@@ -35,13 +35,13 @@ function HowItWorks() {
 
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-            The experience
+            L’expérience
           </span>
 
           <h2 className="mt-4 font-serif text-5xl font-medium leading-[0.95] md:text-6xl">
-            From an idea
+            De la première idée
             <br />
-            to a place of your own.
+            jusqu’à votre lieu de vie.
           </h2>
         </div>
 

@@ -27,11 +27,11 @@ export function CatalogProvider({ children }) {
   }, [])
 
   if (error) {
-    return <p>Unable to load catalog data.</p>
+    return <p>Impossible de charger le catalogue.</p>
   }
 
   if (!catalog) {
-    return <p>Loading catalog...</p>
+    return <p>Chargement du catalogue...</p>
   }
 
   return (

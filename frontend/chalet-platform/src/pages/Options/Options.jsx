@@ -16,14 +16,14 @@ function Options() {
   return (
     <main className="bg-[#F7F5F0]">
 
-      <Navbar />
+      <Navbar contained />
 
       {/* HERO */}
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2200&q=90"
-          alt="Luxury chalet interior"
+          src="https://source.unsplash.com/2200x1400/?tunisia,interior,mediterranean"
+          alt="Intérieur contemporain aux inspirations tunisiennes"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -44,19 +44,19 @@ function Options() {
           >
 
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-              The details
+              Les détails
             </span>
 
             <h1 className="mt-5 font-serif text-7xl font-medium leading-[0.83] text-white md:text-8xl lg:text-[110px]">
-              Make it
+              Composez
               <br />
-              <span className="italic">yours.</span>
+              <span className="italic">le vôtre.</span>
             </h1>
 
             <p className="mt-8 max-w-xl text-sm leading-6 text-white/70 md:text-base">
-              From a quiet morning by the pool to evenings around
-              the fireplace, choose the details that transform
-              your chalet into your own private retreat.
+              D’un matin paisible au bord de la piscine à une soirée au coin
+              du feu, choisissez les détails qui feront de votre chalet un
+              refuge véritablement personnel.
             </p>
 
           </motion.div>
@@ -65,7 +65,7 @@ function Options() {
 
         <div className="absolute bottom-8 right-8 z-10 hidden items-center gap-3 text-white/60 md:flex">
           <span className="text-[10px] uppercase tracking-[0.25em]">
-            Explore options
+            Explorer les options
           </span>
 
           <ArrowDown size={15} />
@@ -83,11 +83,11 @@ function Options() {
             <Reveal>
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  Personalization
+                  Personnalisation
                 </span>
 
                 <h2 className="mt-4 max-w-lg font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-                  The architecture
+                  L’architecture
                   <br />
                   is only the beginning.
                 </h2>
@@ -98,8 +98,8 @@ function Options() {
               <p className="max-w-2xl text-base leading-8 text-[#77766F] md:text-lg">
                 Start with one of our chalet models, then shape
                 the experience around the way you want to live.
-                Add the features that matter to you and leave
-                the rest behind.
+                Ajoutez les équipements qui comptent pour vous, en toute
+                liberté.
               </p>
             </Reveal>
 
@@ -193,7 +193,7 @@ function Options() {
               </span>
 
               <h2 className="mx-auto mt-4 max-w-3xl font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-                Your chalet,
+                Votre chalet,
                 <br />
                 your decisions.
               </h2>
@@ -207,12 +207,12 @@ function Options() {
             {[
               {
                 number: '01',
-                title: 'Choose a model',
+                title: 'Choisir un modèle',
                 text: 'Start with the architecture that best matches the way you want to live.',
               },
               {
                 number: '02',
-                title: 'Add your options',
+                title: 'Ajouter vos options',
                 text: 'Select pools, terraces, interiors and experiences to make it yours.',
               },
               {
@@ -259,7 +259,7 @@ function Options() {
             <Reveal>
 
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1D2923]/60">
-                Next step
+                Étape suivante
               </span>
 
               <h2 className="mt-5 font-serif text-6xl font-medium leading-[0.88] text-[#1D2923] md:text-8xl">
@@ -272,7 +272,7 @@ function Options() {
 
               <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-[#1D2923]/65 md:text-base">
                 Build it around the way you want to live.
-                Choose your terrain, model and details.
+                Choisissez votre terrain, votre modèle et vos détails.
               </p>
 
               <Link

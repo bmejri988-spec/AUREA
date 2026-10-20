@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from 'react'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'Chalet Models', path: '/chalet-models' },
+  { label: 'Accueil', path: '/' },
+  { label: 'Modèles', path: '/chalet-models' },
   { label: 'Terrains', path: '/terrains' },
   { label: 'Options', path: '/options' },
-  { label: 'About', path: '/about' },
+  { label: 'À propos', path: '/about' },
 ]
 
-function Navbar() {
+function Navbar({ contained = false }) {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [isHidden, setIsHidden] = useState(false)
@@ -41,7 +41,7 @@ function Navbar() {
 
   return (
     <header
-      className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
+      className={`${contained ? 'absolute' : 'fixed'} left-0 top-0 z-50 w-full transition-all duration-500 ${
         isHidden ? '-translate-y-full' : 'translate-y-0'
       } ${
         scrolled
@@ -50,41 +50,54 @@ function Navbar() {
       }`}
     >
       <div
-        className={`mx-auto max-w-375 px-6 transition-all duration-500 md:px-10 lg:px-16 ${
+        className={`mx-auto max-w-375 px-5 transition-all duration-500 md:px-8 lg:px-12 ${
           scrolled ? 'py-4' : 'py-6'
         }`}
       >
-        <nav className="flex items-center justify-between">
+        <nav className="flex items-center justify-between gap-6">
 
           {/* Logo */}
-          <Link
-            to="/"
-            className="relative z-50 font-serif text-3xl text-white"
-          >
-            AUREA
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              to="/"
+              className="relative z-50 font-serif text-2xl tracking-[0.12em] text-white md:text-[1.7rem]"
+            >
+              AUREA
+            </Link>
+            <span className="hidden h-5 w-px bg-white/25 sm:block" />
+            <span className="hidden text-[9px] font-semibold uppercase tracking-[0.22em] text-white/55 sm:block">
+              Chalets d’exception
+            </span>
+          </div>
 
           {/* Desktop */}
-          <div className="hidden items-center gap-8 lg:flex">
+          <div className="hidden items-center gap-1 rounded-full border border-white/15 bg-black/15 p-1 backdrop-blur-md lg:flex">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.path}
                 to={link.path}
-                className="text-sm font-medium text-white/80 transition-colors duration-300 hover:text-white"
+                className={({ isActive }) => `rounded-full px-3 py-2 text-[11px] font-semibold tracking-wide transition-colors ${
+                  isActive
+                    ? 'bg-white text-[#0C2B30]'
+                    : 'text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
+          </div>
 
+          <div className="hidden lg:block">
             <Link
               to="/build-your-own"
-              className="ml-4 inline-flex items-center gap-2 bg-white px-5 py-3 text-sm font-semibold text-[#1D2923] transition-all duration-300 hover:bg-[#EFEBE2]"
+              className="group inline-flex items-center gap-2 rounded-full border border-[#C9A45C] bg-[#C9A45C] px-4 py-2.5 text-[11px] font-bold text-[#0C2B30] transition-all duration-300 hover:bg-[#E4DCCB]"
             >
-              Build Your Own
+              Composer votre chalet
 
               <ArrowUpRight
-                size={16}
+                size={14}
                 strokeWidth={1.8}
+                className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
               />
             </Link>
           </div>
@@ -137,7 +150,7 @@ function Navbar() {
             onClick={() => setIsOpen(false)}
             className="mt-10 inline-flex w-fit items-center gap-3 bg-white px-6 py-4 text-sm font-semibold text-[#1D2923]"
           >
-            Build Your Own
+            Composer votre chalet
             <ArrowUpRight size={17} />
           </Link>
 

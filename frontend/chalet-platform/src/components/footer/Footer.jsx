@@ -18,20 +18,20 @@ function Footer() {
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/45">
-              Exceptional places. Thoughtful architecture.
-              A second home designed around you.
+              Des lieux d’exception et une architecture attentive.
+              Un second chez-vous pensé autour de vous.
             </p>
           </div>
 
           {/* Explore */}
           <div>
             <span className="text-xs uppercase tracking-[0.2em] text-white/35">
-              Explore
+              Découvrir
             </span>
 
             <div className="mt-6 flex flex-col gap-3">
               <Link to="/about" className="text-sm text-white/65 transition-colors duration-300 hover:text-white">
-                About
+                À propos
               </Link>
 
               <Link to="/terrains" className="text-sm text-white/65 transition-colors duration-300 hover:text-white">
@@ -39,7 +39,7 @@ function Footer() {
               </Link>
 
               <Link to="/chalet-models" className="text-sm text-white/65 transition-colors duration-300 hover:text-white">
-                Chalet Models
+                Modèles de chalets
               </Link>
 
               <Link to="/options" className="text-sm text-white/65 transition-colors duration-300 hover:text-white">
@@ -47,7 +47,7 @@ function Footer() {
               </Link>
 
               <Link to="/build-your-own" className="text-sm text-white/65 transition-colors duration-300 hover:text-white">
-                Build Your Own
+                Composer votre chalet
               </Link>
             </div>
           </div>
@@ -74,7 +74,7 @@ function Footer() {
               </a>
 
               <span className="text-sm text-white/45">
-                Tunis, Tunisia
+                Tunis, Tunisie
               </span>
             </div>
           </div>
@@ -83,7 +83,7 @@ function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/30 md:flex-row md:items-center md:justify-between">
           <span>
-            © 2026 AUREA. All rights reserved.
+            © 2026 AUREA. Tous droits réservés.
           </span>
 
           <div className="flex gap-6">

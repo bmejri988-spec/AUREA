@@ -54,7 +54,7 @@ function ImageGallery({ images = [] }) {
             <div className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/10" />
 
             <span className="absolute bottom-5 right-5 bg-white px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-[#1D2923] opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              View
+              Voir
             </span>
           </motion.button>
         ))}
@@ -111,7 +111,7 @@ function ImageGallery({ images = [] }) {
                 nextImage()
               }}
               className="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md"
-              aria-label="Next image"
+              aria-label="Image suivante"
             >
               <ChevronRight size={20} />
             </button>

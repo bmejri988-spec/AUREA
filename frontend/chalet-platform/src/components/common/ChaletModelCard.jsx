@@ -2,6 +2,7 @@ import { ArrowUpRight, BedDouble, Maximize2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { formatSurface } from '../../data/repository'
+import { localizedCategory } from '../../data/localization'
 
 function ChaletModelCard({ model, index = 0 }) {
   return (
@@ -34,7 +35,7 @@ function ChaletModelCard({ model, index = 0 }) {
           {/* Category */}
           <div className="absolute left-5 top-5">
             <span className="bg-white/90 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1D2923] backdrop-blur-sm">
-              {model.category}
+              {localizedCategory(model.category)}
             </span>
           </div>
 
@@ -63,7 +64,7 @@ function ChaletModelCard({ model, index = 0 }) {
 
               <span className="flex items-center gap-2">
                 <BedDouble size={13} />
-                {model.bedrooms} bedrooms
+                {model.bedrooms} chambres
               </span>
 
             </div>

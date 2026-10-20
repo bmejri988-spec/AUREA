@@ -18,7 +18,7 @@ function BuildCTA() {
           viewport={{ once: true }}
           className="text-xs font-semibold uppercase tracking-[0.3em] text-[#1D2923]/60"
         >
-          Your vision
+          Votre vision
         </motion.span>
 
         <motion.h2
@@ -28,9 +28,9 @@ function BuildCTA() {
           transition={{ delay: 0.1 }}
           className="mt-5 font-serif text-6xl font-medium leading-[0.9] text-[#1D2923] md:text-8xl"
         >
-          Build something
+          Donnez forme à un lieu
           <br />
-          <span className="italic">uniquely yours.</span>
+          <span className="italic">qui vous ressemble.</span>
         </motion.h2>
 
         <motion.p
@@ -40,9 +40,9 @@ function BuildCTA() {
           transition={{ delay: 0.2 }}
           className="mx-auto mt-8 max-w-xl text-sm leading-6 text-[#1D2923]/65 md:text-base"
         >
-          Choose your terrain, select your chalet,
-          customize every detail, and start imagining
-          your future escape.
+          Choisissez votre terrain, sélectionnez votre modèle et composez une
+          résidence qui traduit votre style de vie. Aurea vous accompagne de
+          la première inspiration jusqu’à la remise des clés.
         </motion.p>
 
         <Reveal>
@@ -50,7 +50,7 @@ function BuildCTA() {
             to="/build-your-own"
             className="group inline-flex items-center gap-4 bg-[#1D2923] px-7 py-4 text-sm font-semibold text-white"
           >
-            Start building
+            Imaginer mon chalet
 
             <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#1D2923] transition-transform duration-300 group-hover:rotate-45">
               <ArrowUpRight size={15} />

@@ -15,7 +15,7 @@ function ChaletModels() {
   return (
     <main className="bg-[#F7F5F0]">
 
-      <Navbar />
+      <Navbar contained />
 
       {/* HERO */}
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
@@ -42,19 +42,18 @@ function ChaletModels() {
             className="max-w-5xl"
           >
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-              The collection
+              La collection
             </span>
 
             <h1 className="mt-5 font-serif text-7xl font-medium leading-[0.83] text-white md:text-8xl lg:text-[110px]">
               Architecture
               <br />
-              <span className="italic">for living.</span>
+              <span className="italic">pour vivre.</span>
             </h1>
 
             <p className="mt-8 max-w-xl text-sm leading-6 text-white/70 md:text-base">
-              Explore a collection of chalet models designed to
-              adapt to different landscapes, lifestyles and ways
-              of escaping the everyday.
+              Découvrez des modèles de chalets pensés pour s’adapter aux
+              paysages, aux styles de vie et aux envies d’évasion de chacun.
             </p>
           </motion.div>
 
@@ -62,7 +61,7 @@ function ChaletModels() {
 
         <div className="absolute bottom-8 right-8 z-10 hidden items-center gap-3 text-white/60 md:flex">
           <span className="text-[10px] uppercase tracking-[0.25em]">
-            Explore models
+            Explorer les modèles
           </span>
 
           <ArrowDown size={15} />
@@ -80,11 +79,11 @@ function ChaletModels() {
             <Reveal>
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  Our approach
+                  Notre approche
                 </span>
 
                 <h2 className="mt-4 max-w-lg font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-                  Designed to belong
+                  Pensés pour appartenir
                   <br />
                   to the landscape.
                 </h2>
@@ -93,10 +92,9 @@ function ChaletModels() {
 
             <Reveal delay={0.15}>
               <p className="max-w-2xl text-base leading-8 text-[#77766F] md:text-lg">
-                Our chalets are not designed as isolated objects.
-                Each model is conceived to interact with its
-                surroundings, allowing light, views, materials
-                and nature to become part of everyday life.
+                Nos chalets ne sont pas des objets isolés. Chaque modèle
+                dialogue avec son environnement pour faire entrer la lumière,
+                les vues, les matières et la nature dans le quotidien.
               </p>
 
               <div className="mt-10 h-px w-full bg-[#DDD8CD]" />
@@ -124,11 +122,11 @@ function ChaletModels() {
 
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  The models
+                  Les modèles
                 </span>
 
                 <h2 className="mt-4 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-                  Choose your
+                  Choisissez votre
                   <br />
                   starting point.
                 </h2>
@@ -239,7 +237,7 @@ function ChaletModels() {
                     {row.key === 'surfaceArea'
                       ? formatSurface(model)
                       : row.key === 'basePrice'
-                        ? formatPrice(model.basePrice, 'From ')
+                        ? formatPrice(model.basePrice, 'À partir de ')
                         : model[row.key]}
                   </div>
                 ))}
@@ -307,7 +305,7 @@ function ChaletModels() {
                     </span>
 
                     <span className="mt-1 block text-[#1D2923]">
-                      {formatPrice(model.basePrice, 'From ')}
+                      {formatPrice(model.basePrice, 'À partir de ')}
                     </span>
                   </div>
 
@@ -332,11 +330,11 @@ function ChaletModels() {
             <Reveal>
 
               <span className="text-xs font-semibold uppercase tracking-[0.3em] text-[#B49A70]">
-                Your choice
+                Votre choix
               </span>
 
               <h2 className="mt-5 font-serif text-6xl font-medium leading-[0.88] md:text-8xl">
-                Find your model.
+                Trouvez votre modèle.
                 <br />
                 <span className="italic text-white/60">
                   Make it yours.

@@ -113,7 +113,7 @@ function BuildYourOwn() {
     */
 
     alert(
-      'AI preview generation will be connected here.'
+      'La génération de l’aperçu sera bientôt disponible.'
     )
   }
 
@@ -141,7 +141,7 @@ function BuildYourOwn() {
             >
               <RotateCcw size={13} />
 
-              Reset
+              Réinitialiser
             </button>
 
             <Link
@@ -150,7 +150,7 @@ function BuildYourOwn() {
             >
               <ArrowLeft size={13} />
 
-              Exit
+              Quitter
             </Link>
 
           </div>

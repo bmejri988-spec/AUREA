@@ -25,7 +25,7 @@ function SummaryStep({ onGeneratePreview }) {
         </span>
 
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] text-[#1D2923] md:text-6xl">
-          Your chalet,
+          Votre chalet,
           <br />
           <span className="italic">
             taking shape.
@@ -108,7 +108,7 @@ function SummaryStep({ onGeneratePreview }) {
               </span>
 
               <span>
-                {selectedModel?.bedrooms} bedrooms
+                {selectedModel?.bedrooms} chambres
               </span>
 
               <span>

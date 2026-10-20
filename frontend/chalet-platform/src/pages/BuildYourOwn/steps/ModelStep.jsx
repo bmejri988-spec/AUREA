@@ -18,20 +18,20 @@ function ModelStep() {
       <div className="max-w-2xl">
 
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-          Step 02
+          Étape 02
         </span>
 
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] text-[#1D2923] md:text-6xl">
-          Choose the
+          Choisissez
           <br />
           <span className="italic">
-            architecture.
+            l’architecture.
           </span>
         </h1>
 
         <p className="mt-6 text-sm leading-6 text-[#77766F]">
-          Select the chalet model that will become the
-          foundation of your retreat.
+          Sélectionnez le modèle de chalet qui deviendra
+          la base de votre refuge.
         </p>
 
       </div>

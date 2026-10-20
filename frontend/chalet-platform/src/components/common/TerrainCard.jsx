@@ -2,6 +2,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { formatPrice, formatSurface } from '../../data/repository'
+import { localizedCategory, localizedRegion } from '../../data/localization'
 
 function TerrainCard({ terrain, index = 0 }) {
   return (
@@ -35,7 +36,7 @@ function TerrainCard({ terrain, index = 0 }) {
           {/* Category */}
           <div className="absolute left-5 top-5">
             <span className="bg-white/90 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1D2923] backdrop-blur-sm">
-              {terrain.category}
+              {localizedCategory(terrain.category)}
             </span>
           </div>
 
@@ -49,7 +50,7 @@ function TerrainCard({ terrain, index = 0 }) {
 
             <div className="flex items-center gap-1.5 text-xs text-white/70">
               <MapPin size={13} strokeWidth={1.5} />
-              {terrain.region}
+              {localizedRegion(terrain.region)}
             </div>
 
             <h3 className="mt-2 font-serif text-4xl leading-none md:text-5xl">
@@ -62,7 +63,7 @@ function TerrainCard({ terrain, index = 0 }) {
               </span>
 
               <span className="text-xs font-medium">
-                {formatPrice(terrain.basePrice, 'From ')}
+                {formatPrice(terrain.basePrice, 'À partir de ')}
               </span>
             </div>
           </div>

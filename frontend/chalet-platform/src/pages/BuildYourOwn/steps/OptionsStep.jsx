@@ -23,20 +23,20 @@ function OptionsStep() {
       <div className="max-w-2xl">
 
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-          Step 03
+          Étape 03
         </span>
 
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] text-[#1D2923] md:text-6xl">
-          Add the details
+          Ajoutez les détails
           <br />
           <span className="italic">
-            that matter.
+            qui comptent.
           </span>
         </h1>
 
         <p className="mt-6 text-sm leading-6 text-[#77766F]">
-          Select the features and experiences you'd like
-          to add to your chalet.
+          Sélectionnez les équipements et les expériences
+          que vous souhaitez ajouter à votre chalet.
         </p>
 
       </div>
@@ -74,7 +74,7 @@ function OptionsStep() {
                   </div>
 
                   <span className="hidden text-xs text-[#99958C] sm:block">
-                    {categoryOptions.length} available
+                    {categoryOptions.length} disponibles
                   </span>
 
                 </div>

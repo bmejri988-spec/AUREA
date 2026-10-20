@@ -8,25 +8,24 @@ function Concept() {
         <div className="grid gap-16 lg:grid-cols-2 lg:items-end">
 
           <SectionTitle
-            eyebrow="The concept"
-            title="A second home, designed around you."
-            description="We believe a second home should be more than a property. It should be a place that feels completely yours."
+            eyebrow="Le concept"
+            title="Un second chez-vous, pensé autour de vous."
+            description="Un chalet doit être plus qu’un bien immobilier : un lieu qui vous ressemble complètement."
           />
 
           <Reveal>
             <p className="max-w-lg text-lg leading-8 text-[#77766F]">
-              From the land beneath your feet to the architecture
-              surrounding you, every element is carefully selected
-              to create a place where you can escape, reconnect,
-              and simply enjoy life.
+              Du terrain sous vos pieds à l’architecture qui vous entoure,
+              chaque élément est choisi avec soin pour créer un lieu où
+              vous évader, vous retrouver et simplement profiter de la vie.
             </p>
 
             <div className="mt-10 h-px w-full bg-[#DDD8CD]" />
 
             <div className="mt-6 flex justify-between text-xs uppercase tracking-[0.2em] text-[#77766F]">
-              <span>Location</span>
+              <span>Terrain</span>
               <span>Architecture</span>
-              <span>Experience</span>
+              <span>Expérience</span>
             </div>
           </Reveal>
 

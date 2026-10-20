@@ -17,24 +17,23 @@ function ChaletModels() {
           {/* Intro */}
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-              The collection
+              La collection
             </span>
 
             <h2 className="mt-4 max-w-md font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-              Architecture with a sense of place.
+              Une architecture ancrée dans son lieu.
             </h2>
 
             <p className="mt-7 max-w-md text-base leading-7 text-[#77766F]">
-              Each chalet is designed to work with its surroundings,
-              bringing together natural materials, generous spaces,
-              and uninterrupted views.
+              Chaque chalet est conçu pour dialoguer avec son environnement,
+              en réunissant matériaux naturels, espaces généreux et vues dégagées.
             </p>
 
             <a
               href="/chalet-models"
               className="mt-8 inline-flex items-center gap-3 text-sm font-semibold text-[#1D2923]"
             >
-              Explore the collection
+              Découvrir la collection
               <ArrowUpRight size={17} />
             </a>
           </div>
@@ -79,7 +78,7 @@ function ChaletModels() {
 
                   <div className="mt-8 flex items-center justify-between">
                     <span className="text-xs uppercase tracking-[0.15em] text-[#77766F]">
-                      View model
+                      Voir le modèle
                     </span>
 
                     <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1D2923] text-white transition-transform duration-300 group-hover:rotate-45">

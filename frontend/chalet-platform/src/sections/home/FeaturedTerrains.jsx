@@ -13,11 +13,11 @@ function FeaturedTerrains() {
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-              Discover
+              À découvrir
             </span>
 
             <h2 className="mt-4 max-w-xl font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-              Find your place.
+              Trouvez votre lieu.
             </h2>
           </div>
 
@@ -25,7 +25,7 @@ function FeaturedTerrains() {
             href="/terrains"
             className="group flex w-fit items-center gap-3 text-sm font-semibold text-[#1D2923]"
           >
-            Explore all terrains
+            Voir tous les terrains
 
             <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#B49A70] transition-all duration-300 group-hover:bg-[#B49A70] group-hover:text-white">
               <ArrowUpRight size={16} />
@@ -69,7 +69,7 @@ function FeaturedTerrains() {
                   {terrain.region}
                 </p>
                 <div className="mt-5 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-white/0 transition-all duration-500 group-hover:text-white/80">
-                  Explore location
+                  Découvrir le terrain
 
                   <ArrowUpRight
                     size={14}

@@ -7,7 +7,7 @@ const steps = [
   },
   {
     id: 2,
-    label: 'Model',
+    label: 'Modèle',
   },
   {
     id: 3,
@@ -15,7 +15,7 @@ const steps = [
   },
   {
     id: 4,
-    label: 'Summary',
+    label: 'Récapitulatif',
   },
 ]
 

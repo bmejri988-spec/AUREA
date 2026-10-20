@@ -22,7 +22,7 @@ function ConfiguratorNavigation({
       >
         <ArrowLeft size={15} />
 
-        Back
+        Retour
       </button>
 
       {!isLastStep && (
@@ -36,7 +36,7 @@ function ConfiguratorNavigation({
               : 'cursor-not-allowed bg-[#DDD8CD] text-[#99958C]'
           }`}
         >
-          Continue
+          Continuer
 
           <ArrowRight
             size={15}

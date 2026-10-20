@@ -18,20 +18,20 @@ function TerrainStep() {
       <div className="max-w-2xl">
 
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-          Step 01
+          Étape 01
         </span>
 
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] text-[#1D2923] md:text-6xl">
-          Where do you want
+          Où souhaitez-vous
           <br />
           <span className="italic">
-            to escape?
+            vous évader ?
           </span>
         </h1>
 
         <p className="mt-6 text-sm leading-6 text-[#77766F]">
-          Choose the landscape that will become the setting
-          for your second home.
+          Choisissez le paysage qui accueillera
+          votre second chez-vous.
         </p>
 
       </div>

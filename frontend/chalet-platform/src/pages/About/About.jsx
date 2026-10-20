@@ -10,7 +10,7 @@ import Reveal from '../../components/common/Reveal'
 function About() {
   return (
     <main className="bg-[#F7F5F0]">
-      <Navbar />
+      <Navbar contained />
 
       {/* =========================================================
           HERO
@@ -19,8 +19,8 @@ function About() {
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=85"
-            alt="Contemporary architectural home surrounded by nature"
+            src="https://source.unsplash.com/2400x1400/?tunisia,architecture,mediterranean"
+            alt="Architecture méditerranéenne en Tunisie"
             className="h-full w-full object-cover"
           />
 
@@ -38,22 +38,22 @@ function About() {
         <Container className="relative z-10 pb-16 pt-40 md:pb-24 lg:pb-28">
           <Reveal>
             <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.3em] text-[#B49A70]">
-              About AUREA
+              À propos d’AUREA
             </span>
           </Reveal>
 
           <Reveal delay={0.1}>
             <h1 className="max-w-5xl font-serif text-6xl font-medium leading-[0.88] tracking-[-0.02em] text-white sm:text-7xl md:text-8xl lg:text-[9rem]">
               Architecture
-              <span className="block text-[#B49A70]">with intention.</span>
+              <span className="block text-[#B49A70]">avec intention.</span>
             </h1>
           </Reveal>
 
           <div className="mt-10 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <Reveal delay={0.2}>
               <p className="max-w-xl text-base leading-7 text-white/65 md:text-lg">
-                AUREA creates contemporary chalets designed around the land,
-                the people who inhabit them, and the way they want to live.
+                AUREA imagine des chalets contemporains en dialogue avec leur
+                terrain, leurs habitants et leur manière de vivre.
               </p>
             </Reveal>
 
@@ -62,7 +62,7 @@ function About() {
                 href="#story"
                 className="flex w-fit items-center gap-3 text-sm font-medium text-white transition-colors hover:text-[#B49A70]"
               >
-                Discover our approach
+                Découvrir notre approche
                 <ArrowDown size={17} strokeWidth={1.5} />
               </a>
             </Reveal>
@@ -80,8 +80,8 @@ function About() {
             <Reveal className="order-2 lg:order-1">
               <div className="group relative h-105 overflow-hidden md:h-140 lg:h-162">
                 <img
-                  src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1400&q=85"
-                  alt="Wooden chalet surrounded by forest"
+                  src="https://source.unsplash.com/1400x1000/?tunisia,forest,mountain"
+                  alt="Paysage forestier du nord-ouest tunisien"
                   className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                 />
 
@@ -89,7 +89,7 @@ function About() {
 
                 <div className="absolute bottom-6 left-6">
                   <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/80">
-                    Designed for its setting
+                    Pensé pour son environnement
                   </span>
                 </div>
               </div>
@@ -99,35 +99,33 @@ function About() {
             <div className="order-1 flex flex-col justify-center lg:order-2">
               <Reveal>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  Our philosophy
+                  Notre philosophie
                 </span>
               </Reveal>
 
               <Reveal delay={0.1}>
                 <h2 className="mt-5 font-serif text-4xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl lg:text-7xl">
-                  A chalet should feel like it belongs exactly where it is.
+                  Un chalet doit sembler avoir toujours appartenu à son lieu.
                 </h2>
               </Reveal>
 
               <Reveal delay={0.2}>
                 <div className="mt-10 max-w-2xl space-y-6 text-base leading-8 text-[#77766F]">
                   <p>
-                    We believe a home begins with its relationship to its
-                    surroundings. The terrain, the landscape, the light and
-                    the way people move through a space all influence the
-                    architecture.
+                    Nous croyons qu’une maison commence par sa relation avec
+                    son environnement. Le terrain, le paysage, la lumière et
+                    les usages façonnent chaque décision architecturale.
                   </p>
 
                   <p>
-                    AUREA brings these elements together through a considered
-                    approach to chalet design. Instead of treating a chalet as
-                    a fixed product, we create a framework that can adapt to
-                    different terrains, lifestyles and ambitions.
+                    AUREA réunit ces éléments dans une approche attentive du
+                    chalet. Plutôt qu’un produit figé, nous créons un cadre
+                    capable de s’adapter à chaque terrain et à chaque projet de vie.
                   </p>
 
                   <p>
-                    The result is architecture that is refined without being
-                    excessive, contemporary without losing its sense of place.
+                    Le résultat est une architecture raffinée sans ostentation,
+                    contemporaine sans jamais perdre son identité.
                   </p>
                 </div>
               </Reveal>
@@ -143,7 +141,7 @@ function About() {
         <Container>
           <Reveal>
             <SectionTitle
-              eyebrow="The AUREA approach"
+              eyebrow="L’approche AUREA"
               title="Three elements. One coherent vision."
               description="Every project begins by bringing together the land, the architecture and the details that make a space personal."
             />
@@ -153,8 +151,8 @@ function About() {
           <Reveal delay={0.1}>
             <div className="mt-16 h-75 overflow-hidden md:h-105 lg:h-125">
               <img
-                src="https://images.unsplash.com/photo-1544984243-ec57ea16fe25?auto=format&fit=crop&w=2200&q=85"
-                alt="Modern chalet architecture in a mountain landscape"
+                src="https://source.unsplash.com/2200x1200/?tunisia,coast,landscape"
+                alt="Paysage côtier tunisien"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -167,7 +165,7 @@ function About() {
                 <span className="text-sm text-[#B49A70]">01</span>
 
                 <h3 className="mt-8 font-serif text-4xl text-[#1D2923]">
-                  The land
+                  Le terrain
                 </h3>
 
                 <p className="mt-5 text-sm leading-7 text-[#77766F]">
@@ -183,11 +181,11 @@ function About() {
                 <span className="text-sm text-[#B49A70]">02</span>
 
                 <h3 className="mt-8 font-serif text-4xl text-[#1D2923]">
-                  The architecture
+                  L’architecture
                 </h3>
 
                 <p className="mt-5 text-sm leading-7 text-[#77766F]">
-                  Our chalet models provide a strong architectural foundation
+                  Nos modèles offrent une base architecturale forte et cohérente.
                   while leaving room for the project to respond to its specific
                   context.
                 </p>
@@ -199,7 +197,7 @@ function About() {
                 <span className="text-sm text-[#B49A70]">03</span>
 
                 <h3 className="mt-8 font-serif text-4xl text-[#1D2923]">
-                  The details
+                  Les détails
                 </h3>
 
                 <p className="mt-5 text-sm leading-7 text-[#77766F]">
@@ -221,7 +219,7 @@ function About() {
           <Reveal>
             <div className="max-w-6xl">
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                Our perspective
+                Notre regard
               </span>
 
               <blockquote className="mt-8 font-serif text-5xl font-medium leading-[0.95] text-white md:text-7xl lg:text-8xl">
@@ -245,7 +243,7 @@ function About() {
           <div className="grid gap-16 lg:grid-cols-[0.7fr_1.3fr] lg:gap-24">
             <Reveal>
               <SectionTitle
-                eyebrow="From idea to home"
+                eyebrow="De l’idée à la maison"
                 title="A simpler way to build."
                 description="AUREA brings the major decisions into one guided experience."
               />
@@ -255,18 +253,18 @@ function About() {
               {[
                 {
                   number: '01',
-                  title: 'Choose your terrain',
+                  title: 'Choisissez votre terrain',
                   text: 'Start with the place where your chalet will live.',
                 },
                 {
                   number: '02',
-                  title: 'Discover your model',
+                  title: 'Découvrez votre modèle',
                   text: 'Select an architectural foundation that fits your vision.',
                 },
                 {
                   number: '03',
                   title: 'Personalize your chalet',
-                  text: 'Add the options and details that make the project yours.',
+                  text: 'Ajoutez les options et les détails qui rendent le projet unique.',
                 },
                 {
                   number: '04',
@@ -303,7 +301,7 @@ function About() {
           <Reveal>
             <div className="relative h-105 overflow-hidden md:h-150 lg:h-180">
               <img
-                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85"
+                src="https://source.unsplash.com/2200x1200/?tunisia,interior,architecture"
                 alt="Warm contemporary chalet interior"
                 className="h-full w-full object-cover"
               />
@@ -312,7 +310,7 @@ function About() {
 
               <div className="absolute bottom-8 left-6 max-w-xl md:bottom-12 md:left-12">
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  The details matter
+                  Les détails comptent
                 </span>
 
                 <p className="mt-4 font-serif text-3xl leading-tight text-white md:text-5xl">
@@ -335,7 +333,7 @@ function About() {
 
               <div className="relative z-10 max-w-3xl">
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  Your project
+                  Votre projet
                 </span>
 
                 <h2 className="mt-5 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-7xl">
@@ -343,7 +341,7 @@ function About() {
                 </h2>
 
                 <p className="mt-7 max-w-xl text-base leading-7 text-[#77766F]">
-                  Explore the available terrains, discover our chalet models
+                  Explorez les terrains disponibles et découvrez nos modèles
                   and create a configuration around your vision.
                 </p>
 
@@ -351,7 +349,7 @@ function About() {
                   to="/build-your-own"
                   className="mt-9 inline-flex items-center gap-3 bg-[#1D2923] px-6 py-3.5 text-sm font-medium text-white transition-all duration-300 hover:bg-[#2D3C34]"
                 >
-                  Build Your Own
+                  Composer votre chalet
                   <ArrowUpRight size={17} strokeWidth={1.7} />
                 </Link>
               </div>

@@ -31,14 +31,14 @@ function Terrains() {
   return (
     <main className="bg-[#F7F5F0]">
 
-      <Navbar />
+      <Navbar contained />
 
       {/* Hero */}
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90"
-          alt="Mountain landscape"
+          src="https://source.unsplash.com/2200x1400/?tunisia,mountain,landscape"
+          alt="Montagnes tunisiennes"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -58,18 +58,19 @@ function Terrains() {
             className="max-w-4xl"
           >
             <span className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">
-              The places
+              Les lieux
             </span>
 
             <h1 className="mt-5 font-serif text-7xl font-medium leading-[0.85] tracking-tight text-white md:text-8xl lg:text-[110px]">
-              Find your
+              Trouvez votre
               <br />
-              <span className="italic">place.</span>
+              <span className="italic">adresse idéale.</span>
             </h1>
 
             <p className="mt-8 max-w-lg text-sm leading-6 text-white/70 md:text-base">
-              Discover carefully selected locations where nature,
-              architecture and the freedom of a second home come together.
+              Découvrez des emplacements soigneusement sélectionnés, où la
+              nature, l’architecture et la liberté d’une résidence secondaire
+              s’accordent naturellement.
             </p>
           </motion.div>
 
@@ -77,7 +78,7 @@ function Terrains() {
 
         <div className="absolute bottom-8 right-8 z-10 hidden items-center gap-3 text-white/60 md:flex">
           <span className="text-[10px] uppercase tracking-[0.25em]">
-            Explore
+            Explorer
           </span>
 
           <ArrowDown size={15} />
@@ -95,20 +96,20 @@ function Terrains() {
 
             <div>
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                Our locations
+                Nos emplacements
               </span>
 
               <h2 className="mt-4 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-                Choose the environment
+                Choisissez l’environnement
                 <br />
-                that feels like home.
+                qui vous ressemble.
               </h2>
             </div>
 
             <p className="max-w-md text-sm leading-6 text-[#77766F]">
-              Whether you dream of waking up beside the sea or
-              escaping into the mountains, explore the places
-              available for your future chalet.
+              Que vous rêviez de vous réveiller face à la mer ou de vous
+              ressourcer dans les montagnes, explorez les lieux disponibles
+              pour votre futur chalet.
             </p>
 
           </div>
@@ -154,11 +155,11 @@ function Terrains() {
           {filteredTerrains.length === 0 && (
             <div className="py-24 text-center">
               <p className="font-serif text-3xl text-[#1D2923]">
-                More places are coming soon.
+                De nouveaux lieux arrivent bientôt.
               </p>
 
               <p className="mt-3 text-sm text-[#77766F]">
-                We're continuously looking for exceptional locations.
+                Nous recherchons en permanence de nouvelles adresses d’exception.
               </p>
             </div>
           )}
