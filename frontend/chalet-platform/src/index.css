@@ -298,9 +298,24 @@ img {
   animation: aurea-catalog-slide .6s ease;
 }
 
+.aurea-catalog-image-loading {
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(110deg, transparent 25%, rgb(255 255 255 / 18%) 45%, transparent 65%),
+    var(--aurea-night-light);
+  background-size: 220% 100%;
+  animation: aurea-catalog-loading 1.2s ease-in-out infinite;
+}
+
 @keyframes aurea-catalog-slide {
   from { opacity: .25; transform: scale(1.04); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes aurea-catalog-loading {
+  from { background-position: 200% 0; }
+  to { background-position: -20% 0; }
 }
 
 .aurea-catalog-count {

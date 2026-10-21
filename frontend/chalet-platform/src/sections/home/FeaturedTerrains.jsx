@@ -37,7 +37,7 @@ function FeaturedTerrains() {
         <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {terrains.slice(0, 3).map((terrain, index) => (
             <motion.a
-              href={`/terrains/${terrain.id}`}
+              href="/terrains"
               key={terrain.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -57,10 +57,6 @@ function FeaturedTerrains() {
               <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/15 to-transparent transition-opacity duration-500 group-hover:from-black/80" />
 
               <div className="absolute bottom-0 left-0 right-0 p-7 text-white">
-                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/70">
-                  {terrain.categoryLabel}
-                </span>
-
                 <h3 className="mt-2 font-serif text-4xl">
                   {terrain.name}
                 </h3>

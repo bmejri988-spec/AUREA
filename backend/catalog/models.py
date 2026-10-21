@@ -1,29 +1,6 @@
 from django.db import models
 
 
-class OptionCategory(models.Model):
-    slug = models.SlugField(primary_key=True, max_length=50)
-    title = models.CharField(max_length=100)
-    description = models.TextField()
-
-    class Meta:
-        ordering = ('title',)
-
-    def __str__(self):
-        return self.title
-
-
-class TerrainCategory(models.Model):
-    slug = models.SlugField(primary_key=True, max_length=50)
-    label = models.CharField(max_length=100)
-
-    class Meta:
-        ordering = ('label',)
-
-    def __str__(self):
-        return self.label
-
-
 class ChaletModel(models.Model):
     slug = models.SlugField(primary_key=True, max_length=100)
     name = models.CharField(max_length=100)
@@ -51,7 +28,6 @@ class Terrain(models.Model):
     slug = models.SlugField(primary_key=True, max_length=100)
     name = models.CharField(max_length=100)
     region = models.CharField(max_length=150)
-    category = models.ForeignKey(TerrainCategory, on_delete=models.PROTECT, related_name='terrains')
     country = models.CharField(max_length=100)
     description = models.TextField()
     surface_area = models.PositiveIntegerField()
@@ -71,27 +47,13 @@ class Terrain(models.Model):
 class Option(models.Model):
     slug = models.SlugField(primary_key=True, max_length=100)
     name = models.CharField(max_length=150)
-    category = models.ForeignKey(OptionCategory, on_delete=models.PROTECT, related_name='options')
     short_description = models.TextField()
     description = models.TextField()
     price = models.PositiveIntegerField()
     image = models.URLField(max_length=500)
     popular = models.BooleanField(default=False)
-    compatible_models = models.ManyToManyField(ChaletModel, through='ModelOption', related_name='options')
-
     class Meta:
-        ordering = ('category_id', 'name')
+        ordering = ('name',)
 
     def __str__(self):
         return self.name
-
-
-class ModelOption(models.Model):
-    model = models.ForeignKey(ChaletModel, on_delete=models.CASCADE)
-    option = models.ForeignKey(Option, on_delete=models.CASCADE)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=('model', 'option'), name='unique_model_option'),
-        ]
-        ordering = ('model_id', 'option_id')

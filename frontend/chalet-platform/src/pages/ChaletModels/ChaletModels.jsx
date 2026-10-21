@@ -7,7 +7,6 @@ import Footer from '../../components/footer/Footer'
 import Container from '../../components/common/Container'
 import Reveal from '../../components/common/Reveal'
 import ChaletModelCard from '../../components/common/ChaletModelCard'
-import { formatPrice, formatSurface } from '../../data/repository'
 import { useCatalog } from '../../context/useCatalog'
 
 function ChaletModels() {
@@ -21,8 +20,8 @@ function ChaletModels() {
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="/images/hero-models.jpg"
-          alt="Contemporary chalet"
+          src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/hero-models.png?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyby1tb2RlbHMucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MjU4MTMyMCwiZXhwIjoxOTE4NzI1MzIwfQ.j29mWKUZnOpU5ZF1s7Li-zXCcT--OMn31YDNiOZIXfM"
+          alt="Chalet contemporain"
           className="absolute inset-0 h-full w-full object-cover"
         />
 
@@ -85,7 +84,7 @@ function ChaletModels() {
                 <h2 className="mt-4 max-w-lg font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
                   Pensés pour appartenir
                   <br />
-                  to the landscape.
+                  au paysage.
                 </h2>
               </div>
             </Reveal>
@@ -100,9 +99,9 @@ function ChaletModels() {
               <div className="mt-10 h-px w-full bg-[#DDD8CD]" />
 
               <div className="mt-6 flex flex-wrap gap-x-10 gap-y-4 text-xs uppercase tracking-[0.18em] text-[#77766F]">
-                <span>Natural materials</span>
-                <span>Thoughtful layouts</span>
-                <span>Flexible configurations</span>
+                <span>Matières naturelles</span>
+                <span>Plans réfléchis</span>
+                <span>Configurations flexibles</span>
               </div>
             </Reveal>
 
@@ -128,14 +127,14 @@ function ChaletModels() {
                 <h2 className="mt-4 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
                   Choisissez votre
                   <br />
-                  starting point.
+                  point de départ.
                 </h2>
               </div>
 
               <p className="max-w-md text-sm leading-6 text-[#77766F]">
-                Each model can be adapted with a range of options
-                and finishes. Think of them as the foundation for
-                your own retreat.
+                Chaque modèle peut être adapté avec différentes options
+                et finitions. Ils constituent la base de votre
+                propre refuge.
               </p>
 
             </div>
@@ -157,168 +156,6 @@ function ChaletModels() {
 
       </section>
 
-      {/* COMPARISON */}
-      <section className="bg-[#F7F5F0] py-24 md:py-32">
-
-        <Container>
-
-          <Reveal>
-            <div className="max-w-2xl">
-
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                At a glance
-              </span>
-
-              <h2 className="mt-4 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
-                Find the model
-                <br />
-                that fits your life.
-              </h2>
-
-            </div>
-          </Reveal>
-
-          {/* Desktop table */}
-          <div className="mt-16 hidden overflow-hidden border border-[#DDD8CD] md:block">
-
-            <div className="grid grid-cols-4 bg-[#1D2923] text-white">
-
-              <div className="p-6 text-xs uppercase tracking-[0.2em] text-white/50">
-                Model
-              </div>
-
-              {models.map((model) => (
-                <div
-                  key={model.id}
-                  className="border-l border-white/10 p-6 font-serif text-3xl"
-                >
-                  {model.name}
-                </div>
-              ))}
-
-            </div>
-
-            {[
-              {
-                label: 'Surface',
-                key: 'surfaceArea',
-              },
-              {
-                label: 'Bedrooms',
-                key: 'bedrooms',
-              },
-              {
-                label: 'Bathrooms',
-                key: 'bathrooms',
-              },
-              {
-                label: 'Maximum guests',
-                key: 'maxGuests',
-              },
-              {
-                label: 'Starting price',
-                key: 'basePrice',
-              },
-            ].map((row) => (
-              <div
-                key={row.key}
-                className="grid grid-cols-4 border-t border-[#DDD8CD]"
-              >
-
-                <div className="p-5 text-xs uppercase tracking-[0.15em] text-[#77766F]">
-                  {row.label}
-                </div>
-
-                {models.map((model) => (
-                  <div
-                    key={model.id}
-                    className="border-l border-[#DDD8CD] p-5 text-sm text-[#1D2923]"
-                  >
-                    {row.key === 'surfaceArea'
-                      ? formatSurface(model)
-                      : row.key === 'basePrice'
-                        ? formatPrice(model.basePrice, 'À partir de ')
-                        : model[row.key]}
-                  </div>
-                ))}
-
-              </div>
-            ))}
-
-          </div>
-
-          {/* Mobile comparison */}
-          <div className="mt-12 space-y-4 md:hidden">
-
-            {models.map((model) => (
-              <div
-                key={model.id}
-                className="border border-[#DDD8CD] bg-white p-6"
-              >
-                <div className="flex items-center justify-between">
-
-                  <h3 className="font-serif text-3xl text-[#1D2923]">
-                    {model.name}
-                  </h3>
-
-                  <span className="text-xs uppercase tracking-[0.15em] text-[#B49A70]">
-                    {formatSurface(model)}
-                  </span>
-
-                </div>
-
-                <div className="mt-6 grid grid-cols-2 gap-y-4 text-sm">
-
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.15em] text-[#99958C]">
-                      Bedrooms
-                    </span>
-
-                    <span className="mt-1 block text-[#1D2923]">
-                      {model.bedrooms}
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.15em] text-[#99958C]">
-                      Bathrooms
-                    </span>
-
-                    <span className="mt-1 block text-[#1D2923]">
-                      {model.bathrooms}
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.15em] text-[#99958C]">
-                      Guests
-                    </span>
-
-                    <span className="mt-1 block text-[#1D2923]">
-                      {model.maxGuests}
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="block text-[10px] uppercase tracking-[0.15em] text-[#99958C]">
-                      Starting from
-                    </span>
-
-                    <span className="mt-1 block text-[#1D2923]">
-                      {formatPrice(model.basePrice, 'À partir de ')}
-                    </span>
-                  </div>
-
-                </div>
-
-              </div>
-            ))}
-
-          </div>
-
-        </Container>
-
-      </section>
 
       {/* CTA */}
       <section className="bg-[#1D2923] py-28 text-white md:py-40">
@@ -337,20 +174,20 @@ function ChaletModels() {
                 Trouvez votre modèle.
                 <br />
                 <span className="italic text-white/60">
-                  Make it yours.
+                  Faites-le vôtre.
                 </span>
               </h2>
 
               <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-white/55 md:text-base">
-                Select a model and customize it with the details
-                that will make your chalet uniquely yours.
+                Sélectionnez un modèle et personnalisez-le avec les détails
+                qui rendront votre chalet unique.
               </p>
 
               <Link
                 to="/build-your-own"
                 className="group mt-10 inline-flex items-center gap-4 bg-white px-7 py-4 text-sm font-semibold text-[#1D2923]"
               >
-                Start building
+                Commencer la configuration
 
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#1D2923] text-white transition-transform duration-300 group-hover:rotate-45">
                   <ArrowUpRight size={15} />

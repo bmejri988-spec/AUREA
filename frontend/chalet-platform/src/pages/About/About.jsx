@@ -19,7 +19,7 @@ function About() {
         {/* Background image */}
         <div className="absolute inset-0">
           <img
-            src="/images/hero-about.jpg"
+            src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/hero-about.jpg?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyby1hYm91dC5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkyNTgxMjEzLCJleHAiOjE5MTg3MjUyMTN9.dM1VLhQQgh57GZVWuosXcTkCD-XgASR-C8xsbX5MkPE"
             alt="Architecture méditerranéenne en Tunisie"
             className="h-full w-full object-cover"
           />
@@ -38,7 +38,7 @@ function About() {
         <Container className="relative z-10 pb-16 pt-40 md:pb-24 lg:pb-28">
           <Reveal>
             <span className="mb-6 block text-xs font-semibold uppercase tracking-[0.3em] text-[#B49A70]">
-              À propos d’AUREA
+              À propos de Maison Havre
             </span>
           </Reveal>
 
@@ -52,7 +52,7 @@ function About() {
           <div className="mt-10 flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <Reveal delay={0.2}>
               <p className="max-w-xl text-base leading-7 text-white/65 md:text-lg">
-                AUREA imagine des chalets contemporains en dialogue avec leur
+                Maison Havre imagine des chalets contemporains en dialogue avec leur
                 terrain, leurs habitants et leur manière de vivre.
               </p>
             </Reveal>
@@ -80,7 +80,7 @@ function About() {
             <Reveal className="order-2 lg:order-1">
               <div className="group relative h-105 overflow-hidden md:h-140 lg:h-162">
                 <img
-                  src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=1400&q=90"
+                  src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/hero-models.png?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyby1tb2RlbHMucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc5MjU4MTMyMCwiZXhwIjoxOTE4NzI1MzIwfQ.j29mWKUZnOpU5ZF1s7Li-zXCcT--OMn31YDNiOZIXfM"
                   alt="Paysage forestier du nord-ouest tunisien"
                   className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
                 />
@@ -118,7 +118,7 @@ function About() {
                   </p>
 
                   <p>
-                    AUREA réunit ces éléments dans une approche attentive du
+                    Maison Havre réunit ces éléments dans une approche attentive du
                     chalet. Plutôt qu’un produit figé, nous créons un cadre
                     capable de s’adapter à chaque terrain et à chaque projet de vie.
                   </p>
@@ -141,9 +141,9 @@ function About() {
         <Container>
           <Reveal>
             <SectionTitle
-              eyebrow="L’approche AUREA"
-              title="Three elements. One coherent vision."
-              description="Every project begins by bringing together the land, the architecture and the details that make a space personal."
+              eyebrow="L’approche Maison Havre"
+              title="Trois éléments. Une vision cohérente."
+              description="Chaque projet réunit le terrain, l’architecture et les détails qui rendent un lieu personnel."
             />
           </Reveal>
 
@@ -169,9 +169,9 @@ function About() {
                 </h3>
 
                 <p className="mt-5 text-sm leading-7 text-[#77766F]">
-                  Understanding the terrain comes first. Orientation,
-                  landscape and context guide the relationship between the
-                  chalet and its surroundings.
+                  Comprendre le terrain est la première étape. Son orientation,
+                  son paysage et son contexte guident la relation entre le
+                  chalet et son environnement.
                 </p>
               </article>
             </Reveal>
@@ -186,8 +186,8 @@ function About() {
 
                 <p className="mt-5 text-sm leading-7 text-[#77766F]">
                   Nos modèles offrent une base architecturale forte et cohérente.
-                  while leaving room for the project to respond to its specific
-                  context.
+                  tout en laissant au projet la liberté de répondre à son
+                  contexte particulier.
                 </p>
               </article>
             </Reveal>
@@ -201,9 +201,9 @@ function About() {
                 </h3>
 
                 <p className="mt-5 text-sm leading-7 text-[#77766F]">
-                  Materials, options and finishing choices complete the
-                  experience, allowing each project to reflect the people who
-                  will live in it.
+                  Les matières, les options et les finitions complètent
+                  l’expérience, afin que chaque projet reflète ceux qui
+                  y vivront.
                 </p>
               </article>
             </Reveal>
@@ -223,10 +223,10 @@ function About() {
               </span>
 
               <blockquote className="mt-8 font-serif text-5xl font-medium leading-[0.95] text-white md:text-7xl lg:text-8xl">
-                “Good architecture does not compete with its surroundings.
+                « Une architecture réussie ne rivalise pas avec son environnement.
                 <span className="text-[#B49A70]">
                   {' '}
-                  It gives them meaning.
+                  Elle lui donne du sens.
                 </span>
                 ”
               </blockquote>
@@ -244,8 +244,8 @@ function About() {
             <Reveal>
               <SectionTitle
                 eyebrow="De l’idée à la maison"
-                title="A simpler way to build."
-                description="AUREA brings the major decisions into one guided experience."
+                title="Une manière plus simple de construire."
+                description="Maison Havre réunit les décisions essentielles dans une expérience accompagnée."
               />
             </Reveal>
 
@@ -254,22 +254,22 @@ function About() {
                 {
                   number: '01',
                   title: 'Choisissez votre terrain',
-                  text: 'Start with the place where your chalet will live.',
+                  text: 'Commencez par le lieu qui accueillera votre chalet.',
                 },
                 {
                   number: '02',
                   title: 'Découvrez votre modèle',
-                  text: 'Select an architectural foundation that fits your vision.',
+                  text: 'Choisissez une base architecturale qui correspond à votre vision.',
                 },
                 {
                   number: '03',
-                  title: 'Personalize your chalet',
+                  title: 'Personnalisez votre chalet',
                   text: 'Ajoutez les options et les détails qui rendent le projet unique.',
                 },
                 {
                   number: '04',
-                  title: 'Bring it together',
-                  text: 'Review your configuration and move from concept toward realization.',
+                  title: 'Réunissez tous les éléments',
+                  text: 'Vérifiez votre configuration et passez du concept à la réalisation.',
                 },
               ].map((step, index) => (
                 <Reveal key={step.number} delay={index * 0.08}>
@@ -302,7 +302,7 @@ function About() {
             <div className="relative h-105 overflow-hidden md:h-150 lg:h-180">
               <img
                 src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2200&q=90"
-                alt="Warm contemporary chalet interior"
+                alt="Intérieur chaleureux d’un chalet contemporain"
                 className="h-full w-full object-cover"
               />
 
@@ -314,7 +314,7 @@ function About() {
                 </span>
 
                 <p className="mt-4 font-serif text-3xl leading-tight text-white md:text-5xl">
-                  Spaces shaped around the way you want to live.
+                  Des espaces façonnés selon votre manière de vivre.
                 </p>
               </div>
             </div>
@@ -337,12 +337,12 @@ function About() {
                 </span>
 
                 <h2 className="mt-5 font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-7xl">
-                  Start designing a chalet that feels like yours.
+                  Imaginez un chalet qui vous ressemble.
                 </h2>
 
                 <p className="mt-7 max-w-xl text-base leading-7 text-[#77766F]">
-                  Explorez les terrains disponibles et découvrez nos modèles
-                  and create a configuration around your vision.
+                  Découvrez les terrains disponibles et nos modèles,
+                  puis composez un projet à la mesure de votre vision.
                 </p>
 
                 <Link

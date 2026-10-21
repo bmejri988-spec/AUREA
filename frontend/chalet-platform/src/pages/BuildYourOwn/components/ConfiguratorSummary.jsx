@@ -59,7 +59,7 @@ function ConfiguratorSummary() {
           </div>
         ) : (
           <p className="mt-3 text-sm text-white/35">
-            Not selected
+            Non sélectionné
           </p>
         )}
 
@@ -69,7 +69,7 @@ function ConfiguratorSummary() {
       <div className="mt-7 border-t border-white/10 pt-6">
 
         <span className="text-[10px] uppercase tracking-[0.18em] text-white/40">
-          Chalet model
+          Modèle de chalet
         </span>
 
         {selectedModel ? (
@@ -92,7 +92,7 @@ function ConfiguratorSummary() {
           </div>
         ) : (
           <p className="mt-3 text-sm text-white/35">
-            Not selected
+            Non sélectionné
           </p>
         )}
 
@@ -148,7 +148,7 @@ function ConfiguratorSummary() {
           </div>
         ) : (
           <p className="mt-3 text-sm text-white/35">
-            No options selected
+            Aucune option sélectionnée
           </p>
         )}
 
@@ -161,7 +161,7 @@ function ConfiguratorSummary() {
 
           <div>
             <span className="text-[10px] uppercase tracking-[0.18em] text-white/40">
-              Estimated total
+              Total estimé
             </span>
 
             <p className="mt-2 font-serif text-3xl">
@@ -175,8 +175,8 @@ function ConfiguratorSummary() {
         </div>
 
         <p className="mt-3 text-[10px] leading-4 text-white/30">
-          Estimated price based on your current selections.
-          Final pricing will be confirmed after consultation.
+          Estimation fondée sur vos choix actuels.
+          Le prix définitif sera confirmé après consultation.
         </p>
 
       </div>

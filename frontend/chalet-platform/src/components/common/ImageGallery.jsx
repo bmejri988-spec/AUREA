@@ -43,7 +43,7 @@ function ImageGallery({ images = [] }) {
           >
             <img
               src={image}
-              alt={`Gallery image ${index + 1}`}
+              alt={`Image de la galerie ${index + 1}`}
               className={`w-full object-cover transition-transform duration-1000 group-hover:scale-105 ${
                 index === 0
                   ? 'h-125 md:h-162.5'
@@ -75,7 +75,7 @@ function ImageGallery({ images = [] }) {
             <button
               onClick={closeImage}
               className="absolute right-6 top-6 z-10 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#1D2923]"
-              aria-label="Close gallery"
+              aria-label="Fermer la galerie"
             >
               <X size={20} />
             </button>
@@ -87,7 +87,7 @@ function ImageGallery({ images = [] }) {
                 previousImage()
               }}
               className="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white backdrop-blur-md"
-              aria-label="Previous image"
+              aria-label="Image précédente"
             >
               <ChevronLeft size={20} />
             </button>
@@ -96,7 +96,7 @@ function ImageGallery({ images = [] }) {
             <motion.img
               key={images[selectedIndex]}
               src={images[selectedIndex]}
-              alt={`Gallery image ${selectedIndex + 1}`}
+              alt={`Image de la galerie ${selectedIndex + 1}`}
               initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4 }}

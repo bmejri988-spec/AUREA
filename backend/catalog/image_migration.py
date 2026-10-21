@@ -149,8 +149,15 @@ def signed_url(reference, expires_in=3600):
         },
         method='POST',
     )
-    with urlopen(request, timeout=15) as response:
-        result = json.loads(response.read().decode('utf-8'))
+    try:
+        with urlopen(request, timeout=15) as response:
+            result = json.loads(response.read().decode('utf-8'))
+    except HTTPError as error:
+        details = error.read().decode('utf-8', errors='replace').strip()
+        raise RuntimeError(
+            f'Supabase signed URL request returned HTTP {error.code}'
+            + (f': {details}' if details else '')
+        ) from error
     signed_path = result.get('signedURL') or result.get('signedUrl')
     if not signed_path:
         raise RuntimeError(f'Supabase did not return a signed URL for {object_path}')

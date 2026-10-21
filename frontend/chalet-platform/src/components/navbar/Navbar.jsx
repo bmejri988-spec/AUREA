@@ -60,12 +60,11 @@ function Navbar({ contained = false }) {
           <div className="flex items-center gap-4">
             <Link
               to="/"
-              className="relative z-50 font-serif text-2xl tracking-[0.12em] text-white md:text-[1.7rem]"
-            >
-              AUREA
+          className="relative z-50 font-serif text-xl tracking-[0.12em] text-white md:text-[1rem]">
+            MAISON.HAVRE
             </Link>
             <span className="hidden h-5 w-px bg-white/25 sm:block" />
-            <span className="hidden text-[9px] font-semibold uppercase tracking-[0.22em] text-white/55 sm:block">
+            <span className="hidden text-[9px] font-semibold uppercase tracking-[0.19em] text-white/55 sm:block">
               Chalets d’exception
             </span>
           </div>
@@ -106,7 +105,7 @@ function Navbar({ contained = false }) {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="relative z-50 flex h-11 w-11 items-center justify-center text-white lg:hidden"
-            aria-label="Toggle menu"
+            aria-label="Ouvrir le menu"
           >
             {isOpen ? (
               <X size={26} strokeWidth={1.5} />

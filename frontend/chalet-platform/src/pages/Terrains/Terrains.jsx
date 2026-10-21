@@ -1,4 +1,3 @@
-import { useMemo, useState } from 'react'
 import { ArrowDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -6,27 +5,10 @@ import Container from '../../components/common/Container'
 import TerrainCard from '../../components/common/TerrainCard'
 import Footer from '../../components/footer/Footer'
 import Navbar from '../../components/navbar/Navbar'
-import { getTerrainCategories } from '../../data/repository'
 import { useCatalog } from '../../context/useCatalog'
 
 function Terrains() {
   const { terrains } = useCatalog()
-  const [activeFilter, setActiveFilter] = useState('all')
-
-  const filteredTerrains = useMemo(() => {
-    if (activeFilter === 'all') {
-      return terrains
-    }
-
-    return terrains.filter(
-      (terrain) => terrain.category === activeFilter
-    )
-  }, [activeFilter, terrains])
-
-  const filters = [
-    { id: 'all', label: 'All' },
-    ...getTerrainCategories(terrains),
-  ]
 
   return (
     <main className="bg-[#F7F5F0]">
@@ -37,7 +19,7 @@ function Terrains() {
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="/images/hero-terrains.jpg"
+          src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/hero-terrains.jpg?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyby10ZXJyYWlucy5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkyNTgxMzc3LCJleHAiOjE5MTg3MjUzNzd9.q6EpFy7sdz9IE975XIPIzP4xfGyfVnCS_pt8TRqVztM"
           alt="Montagnes tunisiennes"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -78,7 +60,7 @@ function Terrains() {
 
         <div className="absolute bottom-8 right-8 z-10 hidden items-center gap-3 text-white/60 md:flex">
           <span className="text-[10px] uppercase tracking-[0.25em]">
-            Explorer
+            Découvrir
           </span>
 
           <ArrowDown size={15} />
@@ -114,35 +96,12 @@ function Terrains() {
 
           </div>
 
-          {/* Filters */}
-          <div className="mt-16 flex flex-wrap gap-2 border-b border-[#DDD8CD] pb-5">
-
-            {filters.map((filter) => {
-              const active = filter.id === activeFilter
-
-              return (
-                <button
-                  key={filter.id}
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={`px-5 py-3 text-xs font-semibold uppercase tracking-[0.15em] transition-all duration-300 ${
-                    active
-                      ? 'bg-[#1D2923] text-white'
-                      : 'bg-transparent text-[#77766F] hover:bg-[#EFEBE2] hover:text-[#1D2923]'
-                  }`}
-                >
-                  {filter.label}
-                </button>
-              )
-            })}
-
-          </div>
-
           {/* Results */}
           <motion.div
             layout
             className="mt-12 grid gap-x-6 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
           >
-            {filteredTerrains.map((terrain, index) => (
+            {terrains.map((terrain, index) => (
               <TerrainCard
                 key={terrain.id}
                 terrain={terrain}
@@ -152,7 +111,7 @@ function Terrains() {
           </motion.div>
 
           {/* Empty state */}
-          {filteredTerrains.length === 0 && (
+          {terrains.length === 0 && (
             <div className="py-24 text-center">
               <p className="font-serif text-3xl text-[#1D2923]">
                 De nouveaux lieux arrivent bientôt.

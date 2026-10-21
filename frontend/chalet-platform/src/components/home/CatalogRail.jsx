@@ -1,9 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useCatalog } from '../../context/useCatalog'
 import {
-  localizedCategory,
   localizedDescription,
   localizedName,
   localizedRegion,
@@ -11,19 +10,44 @@ import {
 
 function CatalogSlider({ label, title, items, getDescription, getPath }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const [loadedImages, setLoadedImages] = useState(() => new Set())
   const currentItem = items[activeIndex]
+  const image = currentItem?.gallery?.[0] || currentItem?.image
+  const batchStart = Math.floor(activeIndex / 3) * 3
+  const batchImages = useMemo(
+    () => items.slice(batchStart, batchStart + 3)
+      .map((item) => item.gallery?.[0] || item.image)
+      .filter(Boolean),
+    [batchStart, items]
+  )
+  const imageLoaded = Boolean(image && loadedImages.has(image))
 
   useEffect(() => {
-    if (items.length < 2) {
-      return undefined
+    let cancelled = false
+
+    batchImages.forEach((source) => {
+      if (loadedImages.has(source)) {
+        return
+      }
+
+      const preload = new Image()
+      preload.onload = () => {
+        if (!cancelled) {
+          setLoadedImages((current) => new Set(current).add(source))
+        }
+      }
+      preload.onerror = () => {
+        if (!cancelled) {
+          setLoadedImages((current) => new Set(current).add(source))
+        }
+      }
+      preload.src = source
+    })
+
+    return () => {
+      cancelled = true
     }
-
-    const timer = window.setInterval(() => {
-      setActiveIndex((index) => (index + 1) % items.length)
-    }, 4500)
-
-    return () => window.clearInterval(timer)
-  }, [items])
+  }, [batchImages, loadedImages])
 
   if (!currentItem) {
     return null
@@ -54,7 +78,11 @@ function CatalogSlider({ label, title, items, getDescription, getPath }) {
 
       <Link className="aurea-catalog-card" to={getPath(currentItem)}>
         <div className="aurea-catalog-image">
-          <img src={currentItem.image} alt={currentItem.name} />
+          {imageLoaded ? (
+            <img src={image} alt={currentItem.name} />
+          ) : (
+            <div className="aurea-catalog-image-loading" aria-label="Chargement de l'image" />
+          )}
           <span className="aurea-catalog-count">
             {String(activeIndex + 1).padStart(2, '0')} / {String(items.length).padStart(2, '0')}
           </span>
@@ -92,8 +120,8 @@ function CatalogRail() {
         label="01 · Le terrain"
         title="Des lieux sélectionnés"
         items={terrains}
-        getDescription={(terrain) => `${localizedRegion(terrain.region)} · ${localizedCategory(terrain.categoryLabel)}`}
-        getPath={(terrain) => `/terrains/${terrain.id}`}
+        getDescription={(terrain) => localizedRegion(terrain.region)}
+        getPath={() => '/terrains'}
       />
       <CatalogSlider
         label="02 · Le modèle"

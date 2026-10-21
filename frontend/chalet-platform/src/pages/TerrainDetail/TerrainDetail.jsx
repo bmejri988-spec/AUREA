@@ -82,7 +82,7 @@ function TerrainDetail() {
               className="mb-8 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-white"
             >
               <ArrowLeft size={14} />
-              All terrains
+              Tous les terrains
             </Link>
 
             <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
@@ -152,16 +152,6 @@ function TerrainDetail() {
 
                 <div className="border-r border-[#DDD8CD] px-5 py-6">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#99958C]">
-                    Type
-                  </span>
-
-                  <p className="mt-3 font-serif text-3xl text-[#1D2923]">
-                    {terrain.categoryLabel}
-                  </p>
-                </div>
-
-                <div className="border-r border-[#DDD8CD] px-5 py-6">
-                  <span className="text-[10px] uppercase tracking-[0.2em] text-[#99958C]">
                     Location
                   </span>
 
@@ -172,7 +162,7 @@ function TerrainDetail() {
 
                 <div className="py-6 pl-5">
                   <span className="text-[10px] uppercase tracking-[0.2em] text-[#99958C]">
-                    Starting from
+                    À partir de
                   </span>
 
                   <p className="mt-3 font-serif text-2xl text-[#1D2923]">
@@ -197,13 +187,13 @@ function TerrainDetail() {
 
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  Why here
+                  Pourquoi ici
                 </span>
 
                 <h2 className="mt-4 font-serif text-5xl leading-[0.95] md:text-6xl">
                   Pensé autour de
                   <br />
-                  the landscape.
+                  le paysage.
                 </h2>
               </div>
 
@@ -240,17 +230,17 @@ function TerrainDetail() {
             <div className="mb-12 flex flex-col justify-between gap-6 md:flex-row md:items-end">
               <div>
                 <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                  Explore
+                  Explorer
                 </span>
 
                 <h2 className="mt-4 font-serif text-5xl text-[#1D2923] md:text-6xl">
-                  See the surroundings.
+                  Découvrez les alentours.
                 </h2>
               </div>
 
               <p className="max-w-sm text-sm leading-6 text-[#77766F]">
-                Every terrain is selected for its character,
-                surroundings and potential to become something special.
+                Chaque terrain est choisi pour son caractère, son
+                environnement et le potentiel qu’il offre.
               </p>
             </div>
           </Reveal>
@@ -274,21 +264,21 @@ function TerrainDetail() {
               </span>
 
               <h2 className="mt-5 font-serif text-6xl font-medium leading-[0.88] text-[#1D2923] md:text-8xl">
-                Now imagine
+                Imaginez maintenant
                 <br />
-                <span className="italic">your chalet here.</span>
+                <span className="italic">votre chalet ici.</span>
               </h2>
 
               <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-[#1D2923]/65 md:text-base">
                 Choisissez votre architecture, sélectionnez vos options,
-                and start creating the second home you've imagined.
+                et commencez à créer la résidence secondaire dont vous rêvez.
               </p>
 
               <Link
                 to={`/build-your-own?terrain=${terrain.id}`}
                 className="group mt-10 inline-flex items-center gap-4 bg-[#1D2923] px-7 py-4 text-sm font-semibold text-white"
               >
-                Build your chalet
+                Composer votre chalet
 
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#1D2923] transition-transform duration-300 group-hover:rotate-45">
                   <ArrowUpRight size={15} />

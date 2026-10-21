@@ -1,23 +1,45 @@
 import { useEffect, useState } from 'react'
-import { fetchCatalog } from '../services/catalogApi'
+import {
+  fetchCatalog,
+  getCachedCatalog,
+  isCatalogCacheFresh,
+} from '../services/catalogApi'
 import { CatalogContext } from './useCatalog'
 
+const emptyCatalog = {
+  models: [],
+  terrains: [],
+  options: [],
+}
+
 export function CatalogProvider({ children }) {
-  const [catalog, setCatalog] = useState(null)
+  const [catalog, setCatalog] = useState(() => ({
+    ...emptyCatalog,
+    ...getCachedCatalog(),
+  }))
   const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(() => !isCatalogCacheFresh())
 
   useEffect(() => {
     let active = true
 
-    fetchCatalog()
+    fetchCatalog((nextCatalog) => {
+      if (active) {
+        setCatalog((current) => ({ ...current, ...nextCatalog }))
+        setLoading(false)
+        setError(null)
+      }
+    })
       .then((data) => {
         if (active) {
-          setCatalog(data)
+          setCatalog((current) => ({ ...current, ...data }))
+          setLoading(false)
         }
       })
       .catch((requestError) => {
         if (active) {
           setError(requestError)
+          setLoading(false)
         }
       })
 
@@ -26,16 +48,8 @@ export function CatalogProvider({ children }) {
     }
   }, [])
 
-  if (error) {
-    return <p>Impossible de charger le catalogue.</p>
-  }
-
-  if (!catalog) {
-    return <p>Chargement du catalogue...</p>
-  }
-
   return (
-    <CatalogContext.Provider value={catalog}>
+    <CatalogContext.Provider value={{ ...catalog, loading, error }}>
       {children}
     </CatalogContext.Provider>
   )

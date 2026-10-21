@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import ChaletModel, ModelOption, Option, OptionCategory, Terrain, TerrainCategory
+from .models import ChaletModel, Option, Terrain
 
-admin.site.register((ChaletModel, Terrain, TerrainCategory, Option, OptionCategory, ModelOption))
+admin.site.register((ChaletModel, Terrain, Option))

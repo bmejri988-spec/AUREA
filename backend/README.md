@@ -17,6 +17,10 @@ Copy `.env.example` to `.env` and set `DATABASE_URL` for Supabase. The settings 
 
 Set the service root directory to `backend`.
 
+Catalog API responses are cached in memory for five minutes by default, reducing
+repeated Supabase queries during normal browsing. Override the duration with
+`CATALOG_CACHE_TTL_SECONDS` when configuring the deployment.
+
 Build command:
 
 ```text
@@ -45,6 +49,8 @@ The image migration uses the explicit mapping in
 stores `storage://images/...` references in the existing `image` and
 `gallery`
 columns. The API converts those references into short-lived signed URLs.
+Objects are stored directly under `images/modeles/` and `images/terrains/`;
+there are no per-record subdirectories.
 
 Set these variables in `backend/.env` (never commit the service-role key):
 

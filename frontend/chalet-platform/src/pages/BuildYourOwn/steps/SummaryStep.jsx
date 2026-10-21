@@ -21,20 +21,20 @@ function SummaryStep({ onGeneratePreview }) {
       <div className="max-w-2xl">
 
         <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-          Step 04
+          Étape 04
         </span>
 
         <h1 className="mt-4 font-serif text-5xl leading-[0.95] text-[#1D2923] md:text-6xl">
           Votre chalet,
           <br />
           <span className="italic">
-            taking shape.
+            prend forme.
           </span>
         </h1>
 
         <p className="mt-6 text-sm leading-6 text-[#77766F]">
-          Review your choices before creating your visual
-          preview.
+          Vérifiez vos choix avant de créer votre
+          aperçu visuel.
         </p>
 
       </div>
@@ -90,7 +90,7 @@ function SummaryStep({ onGeneratePreview }) {
           <div>
 
             <span className="text-[10px] uppercase tracking-[0.2em] text-[#99958C]">
-              Chalet model
+              Modèle de chalet
             </span>
 
             <h2 className="mt-3 font-serif text-4xl text-[#1D2923]">
@@ -112,7 +112,7 @@ function SummaryStep({ onGeneratePreview }) {
               </span>
 
               <span>
-                {selectedModel?.bathrooms} bathrooms
+                {selectedModel?.bathrooms} salles de bains
               </span>
 
             </div>
@@ -129,11 +129,11 @@ function SummaryStep({ onGeneratePreview }) {
             <div>
 
               <span className="text-[10px] uppercase tracking-[0.2em] text-[#99958C]">
-                Selected options
+                Options sélectionnées
               </span>
 
               <h2 className="mt-3 font-serif text-3xl text-[#1D2923]">
-                Personal touches
+                Les détails qui vous ressemblent
               </h2>
 
             </div>
@@ -162,7 +162,7 @@ function SummaryStep({ onGeneratePreview }) {
                     </p>
 
                     <p className="mt-1 text-xs text-[#99958C]">
-                      {option.category}
+                      {option.shortDescription}
                     </p>
 
                   </div>
@@ -180,7 +180,7 @@ function SummaryStep({ onGeneratePreview }) {
           ) : (
 
             <p className="mt-8 text-sm text-[#99958C]">
-              No additional options selected.
+              Aucune option supplémentaire sélectionnée.
             </p>
 
           )}
@@ -195,7 +195,7 @@ function SummaryStep({ onGeneratePreview }) {
             <div>
 
               <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
-                Estimated investment
+                Investissement estimé
               </span>
 
               <p className="mt-3 font-serif text-5xl">
@@ -206,10 +206,10 @@ function SummaryStep({ onGeneratePreview }) {
               </p>
 
               <p className="mt-3 max-w-md text-xs leading-5 text-white/40">
-                This is an initial estimate based on your
-                current configuration. Final pricing depends
-                on the terrain, finishes, technical studies
-                and final specifications.
+                Cette première estimation repose sur votre
+                configuration actuelle. Le prix définitif dépendra
+                du terrain, des finitions, des études techniques
+                et des spécifications finales.
               </p>
 
             </div>
@@ -221,7 +221,7 @@ function SummaryStep({ onGeneratePreview }) {
                 onClick={onGeneratePreview}
                 className="group inline-flex items-center gap-4 bg-white px-7 py-4 text-sm font-semibold text-[#1D2923]"
               >
-                Create visual preview
+                Créer l’aperçu visuel
 
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#B49A70] transition-transform duration-300 group-hover:translate-x-1">
                   <ArrowRight size={15} />

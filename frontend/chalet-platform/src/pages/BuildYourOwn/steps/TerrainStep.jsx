@@ -98,7 +98,7 @@ function TerrainStep() {
                   </h2>
 
                   <p className="mt-2 text-xs text-white/60">
-                    {formatSurface(terrain)} · {terrain.categoryLabel}
+                    {formatSurface(terrain)} · {terrain.country}
                   </p>
 
                 </div>

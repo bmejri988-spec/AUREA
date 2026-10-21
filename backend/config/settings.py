@@ -160,6 +160,14 @@ STORAGES = {
     },
 }
 
+CACHE_TTL_SECONDS = int(os.getenv('CATALOG_CACHE_TTL_SECONDS', '300'))
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'aurea-catalog-cache',
+    },
+}
+
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration

@@ -18,6 +18,11 @@ IMAGE_ROOTS = {
     'terrains': 'terrains',
 }
 
+STORAGE_GROUPS = {
+    'models': 'modeles',
+    'terrains': 'terrains',
+}
+
 
 class Command(BaseCommand):
     help = 'Upload catalog images to private Supabase Storage and update galleries.'
@@ -74,10 +79,10 @@ class Command(BaseCommand):
                         continue
                     content_hashes[file_hash] = source_path.name
 
-                    object_path = f'{group_name}/{slug}/{index + 1:02d}-{filename}'
+                    object_path = f'{STORAGE_GROUPS[group_name]}/{filename}'
                     try:
                         result = storage.upload(source_path, object_path)
-                        totals[result] += 1
+                        totals['duplicates' if result == 'duplicate' else result] += 1
                         references.append(storage_reference(bucket, object_path))
                         self.stdout.write(f'{result.upper()}: {source_path.name} -> {object_path}')
                     except Exception as error:

@@ -1,21 +1,14 @@
-import { getOptionsForModel } from '../../../data/repository'
 import { useConfigurator } from '../../../context/useConfigurator'
 import { useCatalog } from '../../../context/useCatalog'
 import OptionCard from '../../../components/common/OptionCard'
 import Reveal from '../../../components/common/Reveal'
 
 function OptionsStep() {
-  const { options, optionCategories, modelOptions } = useCatalog()
+  const { options } = useCatalog()
   const {
-    selectedModel,
     selectedOptions,
-    selectedModelId,
     toggleOption,
   } = useConfigurator()
-
-  const compatibleOptions = selectedModel
-    ? getOptionsForModel(options, modelOptions, selectedModelId)
-    : options
 
   return (
     <div>
@@ -43,66 +36,33 @@ function OptionsStep() {
 
       <div className="mt-12 space-y-20">
 
-        {optionCategories.map((category) => {
+        <section>
+          <Reveal>
+            <div className="mb-8 flex items-end justify-between gap-6 border-b border-[#DDD8CD] pb-5">
+              <h2 className="font-serif text-4xl text-[#1D2923]">
+                Toutes les options
+              </h2>
+              <span className="hidden text-xs text-[#99958C] sm:block">
+                {options.length} disponibles
+              </span>
+            </div>
+          </Reveal>
 
-          const categoryOptions =
-            compatibleOptions.filter(
-              (option) => option.category === category.id
-            )
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {options.map((option) => {
+              const selected = selectedOptions.some((item) => item.id === option.id)
 
-          if (categoryOptions.length === 0) {
-            return null
-          }
-
-          return (
-            <section key={category.id}>
-
-              <Reveal>
-
-                <div className="mb-8 flex items-end justify-between gap-6 border-b border-[#DDD8CD] pb-5">
-
-                  <div>
-
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-[#B49A70]">
-                      {category.id}
-                    </span>
-
-                    <h2 className="mt-2 font-serif text-4xl text-[#1D2923]">
-                      {category.title}
-                    </h2>
-
-                  </div>
-
-                  <span className="hidden text-xs text-[#99958C] sm:block">
-                    {categoryOptions.length} disponibles
-                  </span>
-
-                </div>
-
-              </Reveal>
-
-              <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-
-                {categoryOptions.map((option) => {
-
-                  const selected =
-                    selectedOptions.some((item) => item.id === option.id)
-
-                  return (
-                    <OptionCard
-                      key={option.id}
-                      option={option}
-                      selected={selected}
-                      onSelect={toggleOption}
-                    />
-                  )
-                })}
-
-              </div>
-
-            </section>
-          )
-        })}
+              return (
+                <OptionCard
+                  key={option.id}
+                  option={option}
+                  selected={selected}
+                  onSelect={toggleOption}
+                />
+              )
+            })}
+          </div>
+        </section>
 
       </div>
 

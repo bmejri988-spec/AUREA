@@ -14,18 +14,3 @@ export const findTerrainById = (terrains, id) =>
 
 export const findOptionById = (options, id) =>
   options.find((option) => option.id === normalizeId(id))
-
-export const getOptionsForModel = (options, modelOptions, modelId) => {
-  const normalizedModelId = normalizeId(modelId)
-  const optionIds = new Set(
-    modelOptions
-      .filter((relation) => relation.modelId === normalizedModelId)
-      .map((relation) => relation.optionId)
-  )
-
-  return options.filter((option) => optionIds.has(option.id))
-}
-
-export const getTerrainCategories = (terrains) =>
-  [...new Map(terrains.map((terrain) => [terrain.category, terrain.categoryLabel])).entries()]
-    .map(([id, label]) => ({ id, label }))

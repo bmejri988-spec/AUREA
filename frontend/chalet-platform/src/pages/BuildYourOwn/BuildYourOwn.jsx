@@ -99,17 +99,17 @@ function BuildYourOwn() {
   const generatePreview = () => {
 
     /*
-      For now this is only a placeholder.
+      Pour le moment, ceci n’est qu’un aperçu temporaire.
 
-      Later:
+      Plus tard :
 
       React
         ↓
       Django
         ↓
-      AI image generation API
+      API de génération d’images par intelligence artificielle
         ↓
-      generated chalet images
+      images générées de votre chalet
     */
 
     alert(
@@ -129,7 +129,7 @@ function BuildYourOwn() {
             to="/"
             className="font-serif text-2xl tracking-wide"
           >
-            AUREA
+            MAISON HAVRE
           </Link>
 
           <div className="flex items-center gap-5">

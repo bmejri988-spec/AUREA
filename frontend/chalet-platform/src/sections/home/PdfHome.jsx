@@ -65,11 +65,14 @@ function PdfHome() {
   return (
     <div className="aurea-pdf-home">
       <section className="aurea-pdf-hero">
-        <img src="/images/Mediterranean.png" alt="Chalet Aurea dans un paysage tunisien" />
+        <img 
+          src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/Mediterranean.png?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTWVkaXRlcnJhbmVhbi5wbmciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkyNTgxNDQ0LCJleHAiOjE5MTg3MjU0NDR9.1L06bQfzwa4CVoJBQoehh5AG80LNIebxW2CMhdAYWJg" 
+          alt="Chalet Maison Havre dans un paysage tunisien" 
+        />
         <div className="aurea-pdf-hero-overlay" />
         <Container className="relative z-10 pb-20 pt-48 md:pb-28">
           <Reveal>
-            <span className="aurea-pdf-eyebrow">Maison Havre · par Aurea</span>
+            <span className="aurea-pdf-eyebrow">Havren Havre</span>
             <h1>
               Havre de paix,
               <br />
@@ -90,7 +93,7 @@ function PdfHome() {
             <span className="aurea-pdf-eyebrow aurea-pdf-eyebrow-dark">L’accueil</span>
             <h2>Une solution complète pour habiter autrement.</h2>
             <p className="aurea-pdf-lead">
-              Aurea imagine des havres de paix sur des emplacements de caractère,
+              Maison Havre imagine des havres de paix sur des emplacements de caractère,
               à moins d’une heure de Tunis, avec une prise en charge claire et
               personnalisée.
             </p>
@@ -153,7 +156,10 @@ function PdfHome() {
         <Container>
           <div className="aurea-pdf-split">
             <Reveal>
-              <img src="/images/Mediterranean.png" alt="Chalet en bois Aurea" />
+              <img 
+                src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/Mediterranean.png?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvTWVkaXRlcnJhbmVhbi5wbmciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkyNTgxNDQ0LCJleHAiOjE5MTg3MjU0NDR9.1L06bQfzwa4CVoJBQoehh5AG80LNIebxW2CMhdAYWJg" 
+                alt="Chalet en bois Maison Havre" 
+              />
             </Reveal>
             <Reveal delay={0.1}>
               <span className="aurea-pdf-eyebrow aurea-pdf-eyebrow-dark">Notre produit</span>
@@ -190,7 +196,10 @@ function PdfHome() {
               <FeatureList items={expertise} />
             </Reveal>
             <Reveal delay={0.1}>
-              <img src="/images/hero-terrains.jpg" alt="Paysage naturel tunisien" />
+              <img 
+                src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/hero-terrains.jpg?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyby10ZXJyYWlucy5qcGciLCJzY29wZSI6ImRvd25sb2FkIiwiaWF0IjoxNzkyNTgxMzc3LCJleHAiOjE5MTg3MjUzNzd9.q6EpFy7sdz9IE975XIPIzP4xfGyfVnCS_pt8TRqVztM" 
+                alt="Paysage naturel tunisien" 
+              />
             </Reveal>
           </div>
         </Container>
@@ -203,7 +212,7 @@ function PdfHome() {
             <h2>Composez votre futur havre.</h2>
             <p className="aurea-pdf-lead">
               Choisissez le terrain, la maison et le niveau de finition qui vous
-              ressemblent. Aurea coordonne chaque étape avec ses partenaires de
+              ressemblent. Maison Havre coordonne chaque étape avec ses partenaires de
               confiance.
             </p>
           </Reveal>

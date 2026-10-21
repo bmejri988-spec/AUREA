@@ -11,7 +11,7 @@ import OptionCard from '../../components/common/OptionCard'
 import { useCatalog } from '../../context/useCatalog'
 
 function Options() {
-  const { options, optionCategories } = useCatalog()
+  const { options } = useCatalog()
 
   return (
     <main className="bg-[#F7F5F0]">
@@ -22,7 +22,7 @@ function Options() {
       <section className="relative flex min-h-screen items-end overflow-hidden bg-[#1D2923]">
 
         <img
-          src="/images/hero-options.jpg"
+          src="https://jfoprtlfgdwaslsqizut.supabase.co/storage/v1/object/sign/images/hero-options.jpg?token=eyJraWQiOiIyNmMxNTNhMy03ZWFhLTQ2YjktYmUwMS1hY2ZjYjllOTYwZmYiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvaGVyby1vcHRpb25zLmpwZyIsInNjb3BlIjoiZG93bmxvYWQiLCJpYXQiOjE3OTI1ODEzNTIsImV4cCI6MTkxODcyNTM1Mn0.RNA-F2l1TEIl8QRE_8px_PCUarjIaDXRZvUQ9JB-atU"
           alt="Intérieur contemporain aux inspirations tunisiennes"
           className="absolute inset-0 h-full w-full object-cover"
         />
@@ -65,7 +65,7 @@ function Options() {
 
         <div className="absolute bottom-8 right-8 z-10 hidden items-center gap-3 text-white/60 md:flex">
           <span className="text-[10px] uppercase tracking-[0.25em]">
-            Explorer les options
+            Découvrir les options
           </span>
 
           <ArrowDown size={15} />
@@ -89,15 +89,15 @@ function Options() {
                 <h2 className="mt-4 max-w-lg font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
                   L’architecture
                   <br />
-                  is only the beginning.
+                  ne fait que commencer.
                 </h2>
               </div>
             </Reveal>
 
             <Reveal delay={0.15}>
               <p className="max-w-2xl text-base leading-8 text-[#77766F] md:text-lg">
-                Start with one of our chalet models, then shape
-                the experience around the way you want to live.
+                Commencez par l’un de nos modèles de chalet, puis façonnez
+                l’expérience selon votre manière de vivre.
                 Ajoutez les équipements qui comptent pour vous, en toute
                 liberté.
               </p>
@@ -114,72 +114,36 @@ function Options() {
 
         <Container>
 
-          {optionCategories.map((category, categoryIndex) => {
-
-            const categoryOptions = options.filter(
-              (option) => option.category === category.id
-            )
-
-            return (
-              <div
-                key={category.id}
-                className={
-                  categoryIndex !== 0
-                    ? 'mt-28 border-t border-[#D8D2C6] pt-24 md:mt-36 md:pt-32'
-                    : ''
-                }
-              >
-
-                {/* Category heading */}
-                <Reveal>
-
-                  <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
-
-                    <div>
-
-                      <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                        0{categoryIndex + 1}
-                      </span>
-
-                      <h2 className="mt-3 font-serif text-5xl font-medium leading-none text-[#1D2923] md:text-6xl">
-                        {category.title}
-                      </h2>
-
-                    </div>
-
-                    <p className="max-w-md text-sm leading-6 text-[#77766F]">
-                      {category.description}
-                    </p>
-
-                  </div>
-
-                </Reveal>
-
-                {/* Cards */}
-                <motion.div
-                  layout
-                  className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
-                >
-
-                  {categoryOptions.map((option, index) => (
-                    <OptionCard
-                      key={option.id}
-                      option={option}
-                      index={index}
-                    />
-                  ))}
-
-                </motion.div>
-
+          <Reveal>
+            <div className="grid gap-8 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+              <div>
+                <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
+                  Les options
+                </span>
+                <h2 className="mt-3 font-serif text-5xl font-medium leading-none text-[#1D2923] md:text-6xl">
+                  Faites-la vôtre.
+                </h2>
               </div>
-            )
-          })}
+              <p className="max-w-md text-sm leading-6 text-[#77766F]">
+                Découvrez les équipements disponibles pour personnaliser votre chalet.
+              </p>
+            </div>
+          </Reveal>
+
+          <motion.div
+            layout
+            className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3"
+          >
+            {options.map((option, index) => (
+              <OptionCard key={option.id} option={option} index={index} />
+            ))}
+          </motion.div>
 
         </Container>
 
       </section>
 
-      {/* HOW IT WORKS */}
+      {/* COMMENT ÇA MARCHE */}
       <section className="py-24 md:py-32">
 
         <Container>
@@ -189,13 +153,13 @@ function Options() {
             <div className="text-center">
 
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-[#B49A70]">
-                Simple by design
+                La simplicité comme principe
               </span>
 
               <h2 className="mx-auto mt-4 max-w-3xl font-serif text-5xl font-medium leading-[0.95] text-[#1D2923] md:text-6xl">
                 Votre chalet,
                 <br />
-                your decisions.
+                vos décisions.
               </h2>
 
             </div>
@@ -208,17 +172,17 @@ function Options() {
               {
                 number: '01',
                 title: 'Choisir un modèle',
-                text: 'Start with the architecture that best matches the way you want to live.',
+                text: 'Commencez par l’architecture qui correspond le mieux à votre façon de vivre.',
               },
               {
                 number: '02',
                 title: 'Ajouter vos options',
-                text: 'Select pools, terraces, interiors and experiences to make it yours.',
+                text: 'Choisissez piscines, terrasses, aménagements intérieurs et expériences pour le rendre vôtre.',
               },
               {
                 number: '03',
-                title: 'See your vision',
-                text: 'Build your configuration and eventually visualize your chalet before construction.',
+                title: 'Donnez vie à votre vision',
+                text: 'Composez votre projet et visualisez bientôt votre chalet avant sa construction.',
               },
             ].map((step) => (
 
@@ -263,15 +227,15 @@ function Options() {
               </span>
 
               <h2 className="mt-5 font-serif text-6xl font-medium leading-[0.88] text-[#1D2923] md:text-8xl">
-                Don't just choose
+                Ne choisissez pas seulement
                 <br />
                 <span className="italic">
-                  your chalet.
+                  votre chalet.
                 </span>
               </h2>
 
               <p className="mx-auto mt-8 max-w-xl text-sm leading-6 text-[#1D2923]/65 md:text-base">
-                Build it around the way you want to live.
+                Concevez-le selon votre manière de vivre.
                 Choisissez votre terrain, votre modèle et vos détails.
               </p>
 
@@ -279,7 +243,7 @@ function Options() {
                 to="/build-your-own"
                 className="group mt-10 inline-flex items-center gap-4 bg-[#1D2923] px-7 py-4 text-sm font-semibold text-white"
               >
-                Build your chalet
+                Composer votre chalet
 
                 <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#1D2923] transition-transform duration-300 group-hover:rotate-45">
                   <ArrowUpRight size={15} />

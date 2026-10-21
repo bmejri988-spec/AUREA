@@ -2,7 +2,7 @@ import { ArrowUpRight, MapPin } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { formatPrice, formatSurface } from '../../data/repository'
-import { localizedCategory, localizedRegion } from '../../data/localization'
+import { localizedRegion } from '../../data/localization'
 
 function TerrainCard({ terrain, index = 0 }) {
   return (
@@ -18,7 +18,7 @@ function TerrainCard({ terrain, index = 0 }) {
       }}
     >
       <Link
-        to={`/terrains/${terrain.id}`}
+        to="/terrains"
         className="group block"
       >
         {/* Image */}
@@ -32,13 +32,6 @@ function TerrainCard({ terrain, index = 0 }) {
 
           {/* Overlay */}
           <div className="absolute inset-0 bg-linear-to-t from-black/65 via-transparent to-black/5" />
-
-          {/* Category */}
-          <div className="absolute left-5 top-5">
-            <span className="bg-white/90 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#1D2923] backdrop-blur-sm">
-              {localizedCategory(terrain.category)}
-            </span>
-          </div>
 
           {/* Arrow */}
           <div className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#1D2923] transition-transform duration-500 group-hover:rotate-45">

@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 from django.db import transaction
 
-from catalog.models import ChaletModel, ModelOption, Option, OptionCategory, Terrain, TerrainCategory
+from catalog.models import ChaletModel, Option, Terrain
 
 
 MODELS = [
@@ -32,12 +32,6 @@ OPTIONS = [
     ('outdoor-kitchen', 'Outdoor Kitchen', 'outdoor', 20000, False, 'Bring cooking and entertaining outside.', 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?auto=format&fit=crop&w=1400&q=90'),
 ]
 
-MODEL_OPTION_IDS = {
-    'horizon': {option[0] for option in OPTIONS if option[0] not in {'private-sauna'}},
-    'atlas': {option[0] for option in OPTIONS},
-    'terra': {'infinity-pool', 'private-jacuzzi', 'panoramic-terrace', 'landscape-garden', 'premium-kitchen', 'interior-furniture-package', 'smart-home', 'architectural-lighting'},
-}
-
 MODEL_DETAILS = {
     'horizon': ('Horizon is designed around natural light and the relationship between interior and landscape. Large openings create a continuous dialogue between the chalet and its surroundings.', ['Panoramic windows', 'Open-plan living area', 'Private terrace', 'Natural materials']),
     'atlas': ('Atlas combines generous spaces with a strong architectural character. Designed for longer stays and family gatherings, it offers a deeper connection with its natural surroundings.', ['Three bedrooms', 'Large living space', 'Fireplace option', 'Mountain-facing terrace']),
@@ -57,25 +51,6 @@ class Command(BaseCommand):
 
     @transaction.atomic
     def handle(self, *args, **options):
-        categories = {
-            slug: OptionCategory.objects.update_or_create(
-                slug=slug,
-                defaults={'title': title, 'description': description},
-            )[0]
-            for slug, title, description in (
-                ('outdoor', 'Outdoor', 'Extend your chalet into the landscape.'),
-                ('interior', 'Interior', 'Create a space that feels completely yours.'),
-                ('experience', 'Experience', 'Add the details that make your retreat special.'),
-            )
-        }
-        terrain_categories = {
-            slug: TerrainCategory.objects.update_or_create(
-                slug=slug,
-                defaults={'label': label},
-            )[0]
-            for slug, label in (('coast', 'Coast'), ('mountain', 'Mountain'))
-        }
-
         for slug, name, subtitle, category, surface_area, bedrooms, bathrooms, max_guests, base_price, image in MODELS:
             description, features = MODEL_DETAILS[slug]
             ChaletModel.objects.update_or_create(
@@ -83,25 +58,17 @@ class Command(BaseCommand):
                 defaults={'name': name, 'subtitle': subtitle, 'category': category, 'surface_area': surface_area, 'bedrooms': bedrooms, 'bathrooms': bathrooms, 'max_guests': max_guests, 'base_price': base_price, 'description': description, 'image': image, 'gallery': [image], 'features': features},
             )
 
-        for slug, name, region, category, country, surface_area, base_price, image in TERRAINS:
+        for slug, name, region, _category, country, surface_area, base_price, image in TERRAINS:
             description, features = TERRAIN_DETAILS[slug]
             Terrain.objects.update_or_create(
                 slug=slug,
-                defaults={'name': name, 'region': region, 'category': terrain_categories[category], 'country': country, 'surface_area': surface_area, 'base_price': base_price, 'description': description, 'image': image, 'gallery': [image], 'features': features},
+                defaults={'name': name, 'region': region, 'country': country, 'surface_area': surface_area, 'base_price': base_price, 'description': description, 'image': image, 'gallery': [image], 'features': features},
             )
 
-        for slug, name, category, price, popular, short_description, image in OPTIONS:
+        for slug, name, _category, price, popular, short_description, image in OPTIONS:
             Option.objects.update_or_create(
                 slug=slug,
-                defaults={'name': name, 'category': categories[category], 'short_description': short_description, 'description': short_description, 'price': price, 'image': image, 'popular': popular},
+                defaults={'name': name, 'short_description': short_description, 'description': short_description, 'price': price, 'image': image, 'popular': popular},
             )
-
-        ModelOption.objects.all().delete()
-        for model_slug, option_slugs in MODEL_OPTION_IDS.items():
-            model = ChaletModel.objects.get(slug=model_slug)
-            ModelOption.objects.bulk_create([
-                ModelOption(model=model, option=Option.objects.get(slug=option_slug))
-                for option_slug in option_slugs
-            ])
 
         self.stdout.write(self.style.SUCCESS('Catalog seed data loaded.'))

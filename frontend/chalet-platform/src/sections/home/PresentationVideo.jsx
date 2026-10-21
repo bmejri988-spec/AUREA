@@ -5,7 +5,7 @@ function PresentationVideo() {
     <section id="video" className="aurea-video-section">
       <div className="aurea-video-heading">
         <div>
-          <span className="aurea-eyebrow">L’expérience Aurea</span>
+          <span className="aurea-eyebrow">L’expérience Maison Havre</span>
           <h2>Découvrez votre futur refuge.</h2>
         </div>
         <p>

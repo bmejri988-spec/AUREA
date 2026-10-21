@@ -14,7 +14,7 @@ function Footer() {
               to="/"
               className="font-serif text-4xl"
             >
-              AUREA
+              MAISON HAVRE
             </Link>
 
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/45">
@@ -83,7 +83,7 @@ function Footer() {
 
         <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs text-white/30 md:flex-row md:items-center md:justify-between">
           <span>
-            © 2026 AUREA. Tous droits réservés.
+            © 2026 MAISON HAVRE. Tous droits réservés.
           </span>
 
           <div className="flex gap-6">
